@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+public class ItemsUI : MonoBehaviour
+{
+    [SerializeField] private GameObject key1;
+    [SerializeField] private GameObject bac_key1;
+    [SerializeField] private GameObject bac_key2;
+    [SerializeField] private GameObject bac_key3;
+    [SerializeField] private GameObject mapObj;
+    [SerializeField] private GameObject mapUI;
+    [SerializeField] private KeyCodeExplanation keyCodeExplanation;
+    private int keyCount;
+    private int countM = 0;//0 = 開けない,1 = 開ける,2 = 閉じる
+    private void Start()
+    {
+        key1.SetActive(false);
+        mapUI.SetActive(false);
+    }
+    public void BackRoomsKeys(int key)
+    {
+        keyCount++;
+        if (keyCount == 3)
+        {
+
+        }
+    }
+    public void ActiveKey1UIFunction()
+    {
+        key1.SetActive(true);
+    }
+    public void NoActiveKey1UIFunction()
+    {
+        key1.SetActive(false);
+    }
+    public void MazeMapFunction()//mapを入手したときの処理
+    {
+        mapObj.SetActive(false);
+        countM = 1;
+        keyCodeExplanation.MoveKeyCodeExplanation("tab", "マップを開く");
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))//mを押したらmapが開く、再度押すと閉じる
+        {
+            if (countM == 1)//開く
+            {
+                mapUI.SetActive(true);
+                // Time.timeScale = 0;
+                countM = 2;
+            }
+            else if (countM == 2)//閉じる
+            {
+                mapUI.SetActive(false);
+                // Time.timeScale = 1;
+                countM = 1;
+
+            }
+        }
+    }
+}
