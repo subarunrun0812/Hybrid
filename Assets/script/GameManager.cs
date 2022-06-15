@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasGroup youdiedUI;
     [SerializeField] private EnemyController enemyController;
     [SerializeField] private GameObject player;
-    public int startFps = 60;
 
     private float deathWaitTime = 2;
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
         youdiedUI.GetComponent<CanvasGroup>().alpha = 0;
         // Use at most one pixel light for every object
         QualitySettings.pixelLightCount = 10;
-        Application.targetFrameRate = startFps;
+        Application.targetFrameRate = PlayerPrefs.GetInt("fpsValue", 60);
     }
 
     // Update is called once per frame

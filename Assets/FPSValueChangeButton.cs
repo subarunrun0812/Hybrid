@@ -22,7 +22,7 @@ public class FPSValueChangeButton : MonoBehaviour,
     [SerializeField] private VALUE_TYPE fps_value = VALUE_TYPE.fps30;
     private void Start()
     {
-        t_fps.text = $"{gameManager.startFps}";
+        t_fps.text = $"{PlayerPrefs.GetInt("fpsValue", 60)}";
     }
     //クリック時
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
@@ -32,12 +32,16 @@ public class FPSValueChangeButton : MonoBehaviour,
         {
             gameManager.ChangeFPSValue(30);
             t_fps.text = $"{30}";
+            PlayerPrefs.SetInt("fpsValue", 30);
         }
         else if (fps_value == VALUE_TYPE.fps60)
         {
             gameManager.ChangeFPSValue(60);
             t_fps.text = $"{60}";
+            PlayerPrefs.SetInt("fpsValue", 60);
         }
+        PlayerPrefs.Save();
+
     }
     //ポインターがオブジェクトに乗ったとき
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
