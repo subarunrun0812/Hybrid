@@ -15,7 +15,7 @@ public class BackRoomsDoor : MonoBehaviour
     [SerializeField] private AudioClip openSE;
     [SerializeField] private AudioClip closeSE;
     private float openTime = 0.8f;
-    private float closeTime = 0.8f;
+    private float closeTime = 0.4f;
     private float waitcloseTime = 2f;//ドアが開っきぱなしの時間
     private bool rotationFlag = true;//ドアを開けた後、数秒の間ドア本体が回転しないために制御
     [SerializeField]
