@@ -7,6 +7,7 @@ public class SilentScript : MonoBehaviour
     [SerializeField] private AudioSource silentBGM;
     [SerializeField] private AudioSource timerBGM;
     [SerializeField] private SilentTimer silentTimer;
+    [SerializeField] private SphereCollider enemyChasingDetector;
     private GameObject[] silentsArray;
 
     private void Start()
@@ -23,12 +24,15 @@ public class SilentScript : MonoBehaviour
     {
         silentBGM.Stop();
     }
+
     public void StartSilent()//サイレンのライトと音楽を作動させる。爆発する前に逃げるシーン
     {
         Debug.Log("StartSilentが呼ばれた");
         PlaySilentBGM();
         timerBGM.Play();
+        enemyChasingDetector.radius = 30;//playerをずっと追いかけるようにする
         silentTimer.enabled = true;
+
         for (int i = 0; i < silentsArray.Length; i++)//すべてのサイレントをスタートさせる
         {
             BlinkingLamp blinkingLamp = silentsArray[i].GetComponent<BlinkingLamp>();

@@ -30,7 +30,7 @@ public class caricatureTrap : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if ((col.transform.gameObject.tag == "Player") || (col.transform.gameObject.tag == "BackRoomsDoor"))
+        if ((col.transform.gameObject.tag == "Player") || (col.transform.gameObject.tag == "BackRoomsDoor") || (col.transform.gameObject.tag == "NormalDoor"))
         {
             EntryEnemy();
         }
