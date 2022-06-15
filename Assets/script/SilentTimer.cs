@@ -16,6 +16,7 @@ public class SilentTimer : MonoBehaviour
     private float seconds;
     //前回Update時の秒数
     private float oldSeconds;
+    [SerializeField] private AudioSource audioSource;
     void Start()
     {
         totalTime = minute * 60 + seconds;
@@ -46,7 +47,15 @@ public class SilentTimer : MonoBehaviour
         //制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
         if (totalTime <= 0f)
         {
+            StartCoroutine("BigBangCorutine");
             Debug.Log("制限時間終了");
         }
+    }
+    private IEnumerator BigBangCorutine()
+    {
+        yield return new WaitForSeconds(3f);
+        //大爆発のSEを流す
+        audioSource.Play();
+        //脱出出来なかった時の処理
     }
 }
