@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 public class FPSValueChangeButton : MonoBehaviour,
     IPointerDownHandler,
     IPointerEnterHandler,
@@ -10,23 +11,33 @@ public class FPSValueChangeButton : MonoBehaviour,
 {
     [SerializeField] private GameManager gameManager;
     public System.Action onClickCallback;
+    [SerializeField] private TextMeshProUGUI t_fps;
 
     //FPSの選択できる値
     public enum VALUE_TYPE
     {
-        30,
-        60
+        fps30,
+        fps60
     }
-    private VALUE_TYPE fps_value = VALUE_TYPE.30;
+    [SerializeField] private VALUE_TYPE fps_value = VALUE_TYPE.fps30;
+    private void Start()
+    {
+        t_fps.text = $"{gameManager.startFps}";
+    }
     //クリック時
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         onClickCallback?.Invoke();
-        if (fps_value == VALUE_TYPE.30)
+        if (fps_value == VALUE_TYPE.fps30)
+        {
             gameManager.ChangeFPSValue(30);
-        if (fps_value == VALUE_TYPE.60)
+            t_fps.text = $"{30}";
+        }
+        else if (fps_value == VALUE_TYPE.fps60)
+        {
             gameManager.ChangeFPSValue(60);
-        fps_value = VALUE_TYPE;
+            t_fps.text = $"{60}";
+        }
     }
     //ポインターがオブジェクトに乗ったとき
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
