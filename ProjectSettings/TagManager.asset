@@ -15,6 +15,7 @@ TagManager:
   - Locker
   - Bed
   - Enemy
+  - LeadLamp
   layers:
   - Default
   - TransparentFX

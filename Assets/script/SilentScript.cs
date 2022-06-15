@@ -9,10 +9,12 @@ public class SilentScript : MonoBehaviour
     [SerializeField] private SilentTimer silentTimer;
     [SerializeField] private SphereCollider enemyChasingDetector;
     private GameObject[] silentsArray;
+    private GameObject[] leadLampArray;
 
     private void Start()
     {
         silentsArray = GameObject.FindGameObjectsWithTag("Silent");
+        leadLampArray = GameObject.FindGameObjectsWithTag("LeadLamp");
         silentTimer.enabled = false;
     }
     public void PlaySilentBGM()
@@ -37,7 +39,11 @@ public class SilentScript : MonoBehaviour
         {
             BlinkingLamp blinkingLamp = silentsArray[i].GetComponent<BlinkingLamp>();
             blinkingLamp.StartBlinkingLamp();
-            Debug.Log("i:" + i);
+        }
+        for (int i = 0; i < leadLampArray.Length; i++)//すべてのサイレントをスタートさせる
+        {
+            LeadLampScript leadLampScript = leadLampArray[i].GetComponent<LeadLampScript>();
+            leadLampScript.LeadLampFunction();
         }
     }
 }
