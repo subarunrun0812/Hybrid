@@ -18,5 +18,7 @@ public class SettingMenu : MonoBehaviour
         float scale = mouseSlider.value;
         firstPersonLook.sensitivity = scale;//マウス感度の値を変更する
         t_mouseValue.text = $"{mouseSlider.value.ToString("N1")}";//小数点第2以下を切り捨て
+        PlayerPrefs.SetFloat("mouseValue", firstPersonLook.sensitivity);
+        PlayerPrefs.Save();
     }
 }
