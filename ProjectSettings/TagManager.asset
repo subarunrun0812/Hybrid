@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MazeMap
+  - BackRoomsDoor
+  - NormalDoor
+  - Silent
+  - FukuroPic
+  - Trap
+  - NotOpenDoor
+  - ColorKeyDoor
+  - Locker
+  - Bed
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,9 +22,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - MazeMap
+  - Player
+  - MazeDoor
   - 
   - 
   - 
