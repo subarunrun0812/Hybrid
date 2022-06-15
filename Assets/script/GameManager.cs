@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //fpsを調整
-        Application.targetFrameRate = 60;
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -37,6 +35,11 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+    }
+    public void ChangeFPSValue(int fps)
+    {
+        //fpsを調整
+        Application.targetFrameRate = fps;//macでテストした時重くなるため、FPSを下げる
     }
 
     public void PlayerDeath()//死んだ時のUIの処理
