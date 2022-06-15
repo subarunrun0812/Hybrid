@@ -53,9 +53,11 @@ public class SilentTimer : MonoBehaviour
     }
     private IEnumerator BigBangCorutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         //大爆発のSEを流す
         audioSource.Play();
         //脱出出来なかった時の処理
+        yield return new WaitForSeconds(5f);
+        Time.timeScale = 0;
     }
 }
