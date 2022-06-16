@@ -16,6 +16,7 @@ TagManager:
   - Bed
   - Enemy
   - LeadLamp
+  - BackRoomsExitDoor
   layers:
   - Default
   - TransparentFX
