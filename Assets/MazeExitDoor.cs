@@ -14,6 +14,7 @@ public class MazeExitDoor : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject enemy;//普通のenemy
     [SerializeField] private FirstPersonLook firstPersonLook;
+    [SerializeField] private GameObject _camera;
 
 
 
@@ -45,6 +46,7 @@ public class MazeExitDoor : MonoBehaviour
     }
     private void StartTimeLine()//timelineを再生する
     {
+        _camera.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         //カメラを動かせないようにする
         firstPersonLook.enabled = false;
         timeline.SetActive(true);
