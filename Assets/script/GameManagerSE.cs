@@ -21,16 +21,25 @@ public class GameManagerSE : MonoBehaviour
     {
         audioSource2d.volume = 0.7f;
     }
+    private bool exitdoor = false;
     public void ChasingSE()
     {
-        heartbeatAS.volume = 0.2f;
-        heartbeatAS.pitch = 2.5f;//speed変更
-        //追いかけられている時は鳴らす
-        heartbeatAS.Play();
+        if (exitdoor == false)
+        {
+            heartbeatAS.volume = 0.2f;
+            heartbeatAS.pitch = 2.5f;//speed変更
+                                     //追いかけられている時は鳴らす
+            heartbeatAS.Play();
 
-        //音をリセット
-        chasingBGM.volume = 1.0f;
-        chasingBGM.Play();
+            //音をリセット
+            chasingBGM.volume = 1.0f;
+            chasingBGM.Play();
+        }
+    }
+    public void ExitDoorStopChasingSE()//chasingSEが絶対にならないようにする
+    {
+        exitdoor = true;
+        chasingBGM.Stop();
     }
     public void StopChasingSE()
     {
