@@ -23,6 +23,7 @@ public class CustomButton : MonoBehaviour,
 	{
 		onClickCallback?.Invoke();
 		pauseMenu.MenuOff();
+        
 	}
 	//ポインターがオブジェクトに乗ったとき
 	void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)

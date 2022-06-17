@@ -24,6 +24,7 @@ public class ResumeButton : MonoBehaviour,
     {
         onClickCallback?.Invoke();
         pauseMenu.MenuOff();
+        
     }
     //ポインターがオブジェクトに乗ったとき
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)

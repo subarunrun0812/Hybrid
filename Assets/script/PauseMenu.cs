@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//mouseのカーソルをロックする
         firstPersonLook.enabled = true;
         Time.timeScale = 1;
+        Debug.Log("firstPersonLook:" + firstPersonLook.enabled);
     }
     public void QuitGame()
     {
@@ -67,6 +68,7 @@ public class PauseMenu : MonoBehaviour
             else//menu画面を閉じるとき
             {
                 MenuOff();
+
                 num = 0;
             }
         }
