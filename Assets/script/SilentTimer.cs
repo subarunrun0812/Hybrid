@@ -60,4 +60,8 @@ public class SilentTimer : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Time.timeScale = 0;
     }
+    public void NoActiveTimer()
+    {
+        t_timerCount.text = "";
+    }
 }

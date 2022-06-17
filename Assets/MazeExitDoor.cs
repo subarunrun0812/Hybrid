@@ -15,7 +15,7 @@ public class MazeExitDoor : MonoBehaviour
     [SerializeField] private GameObject enemy;//普通のenemy
     [SerializeField] private FirstPersonLook firstPersonLook;
     [SerializeField] private GameObject _camera;
-
+    [SerializeField] private SilentTimer silentTimer;
 
 
     void Start()
@@ -24,9 +24,6 @@ public class MazeExitDoor : MonoBehaviour
         OpenFlag = false;
         audioSource = this.gameObject.GetComponent<AudioSource>();
         timeline.SetActive(false);
-
-        //timelineの終了を計算する
-        director.paused += OnPlayableDirectorPaused;
     }
     public void ExitDoorOpneFlagTrue()//サイレンが呼ばれた時にtrueになる
     {
@@ -46,6 +43,11 @@ public class MazeExitDoor : MonoBehaviour
     }
     private void StartTimeLine()//timelineを再生する
     {
+        //timelineの終了を計算する
+        director.paused += OnPlayableDirectorPaused;
+        //timerを非表示にする  
+        silentTimer.NoActiveTimer();
+        silentTimer.enabled = false;//timerをリセットする
         _camera.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         //カメラを動かせないようにする
         firstPersonLook.enabled = false;
