@@ -44,6 +44,8 @@ public class MazeExitDoor : MonoBehaviour
     }
     private void StartTimeLine()//timelineを再生する
     {
+        //gameobject.tagを変更して、動的にドアを開けられないようにする
+        this.tag = "Untagged";
         //timelineの終了を計算する
         director.paused += OnPlayableDirectorPaused;
         //timerを非表示にする  
@@ -55,6 +57,11 @@ public class MazeExitDoor : MonoBehaviour
         timeline.SetActive(true);
         enemy.SetActive(false);
         gameManagerSE.ExitDoorStopChasingSE();//chasingSEを止める
+    }
+    public void EndTimeline()
+    {
+        Debug.Log("EndTimeLineが呼ばれた");
+        firstPersonLook.enabled = true;
     }
     private void OnPlayableDirectorPaused(PlayableDirector aDirector)
     {
