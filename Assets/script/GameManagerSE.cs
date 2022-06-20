@@ -14,9 +14,12 @@ public class GameManagerSE : MonoBehaviour
 
     void Start()
     {
+        ZeroHeartbeat();
+    }
+    public void ZeroHeartbeat()
+    {
         heartbeatAS.volume = 0f;
     }
-
     public void BackHomeSE()
     {
         audioSource2d.volume = 0.7f;

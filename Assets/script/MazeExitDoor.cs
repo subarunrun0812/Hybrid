@@ -62,6 +62,7 @@ public class MazeExitDoor : MonoBehaviour
     {
         Debug.Log("EndTimeLineが呼ばれた");
         firstPersonLook.enabled = true;
+        gameManagerSE.ZeroHeartbeat();
     }
     private void OnPlayableDirectorPaused(PlayableDirector aDirector)
     {

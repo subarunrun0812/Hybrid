@@ -18,6 +18,7 @@ public class BomsRoomDoorOpenFlag : MonoBehaviour
         if (col.gameObject.tag == "NormalDoor")
         {
             silentScript.StartSilent();
+            Debug.Log("bamsRoomsDoorが開いた");
             //enemyを登場させる
             // silentEnemyObj.SetActive(true);
             // silentEnemy.EntryEnemy();

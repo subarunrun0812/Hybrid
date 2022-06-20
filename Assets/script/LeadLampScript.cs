@@ -14,5 +14,4 @@ public class LeadLampScript : MonoBehaviour
         leadLampObj.SetActive(true);
         leadLampObj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
     }
-
 }

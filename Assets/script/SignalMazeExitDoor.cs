@@ -6,12 +6,14 @@ using UnityEngine.Audio;
 public class SignalMazeExitDoor : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    [SerializeField] private SilentScript silentScript;
+
     public void Enter_ExitDoor()
     {
     }
     public void EndExplosion()
     {
-        Debug.Log("EndExplosionが呼び出された");
+        silentScript.TurnOffSilent();
         audioMixer.SetFloat("SilentVolume", -80);
     }
 }

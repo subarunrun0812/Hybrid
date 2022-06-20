@@ -31,4 +31,9 @@ public class BlinkingLamp : MonoBehaviour
             yield return new WaitForSeconds(time);
         }
     }
+
+    public void TurnOffBlinkingLamp()//ランプを非表示にする
+    {
+        this.gameObject.SetActive(false);
+    }
 }
