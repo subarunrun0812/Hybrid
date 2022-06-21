@@ -17,6 +17,7 @@ public class SilentTimer : MonoBehaviour
     //前回Update時の秒数
     private float oldSeconds;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private GameManager gameManager;
     void Start()
     {
         totalTime = minute * 60 + seconds;
@@ -53,12 +54,10 @@ public class SilentTimer : MonoBehaviour
     }
     private IEnumerator BigBangCorutine()
     {
-        yield return new WaitForSeconds(2f);
-        //大爆発のSEを流す
+        //爆発のSEを流す
         audioSource.Play();
-        //脱出出来なかった時の処理
-        yield return new WaitForSeconds(5f);
-        Time.timeScale = 0;
+        gameManager.PlayerDeath();
+        yield return new WaitForSeconds(0.5f);
     }
     public void NoActiveTimer()
     {
