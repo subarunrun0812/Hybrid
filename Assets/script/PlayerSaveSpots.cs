@@ -20,8 +20,10 @@ public class PlayerSaveSpots : MonoBehaviour
 		// Quaternion(回転値)を取得
 		Quaternion quaternion = Quaternion.LookRotation(vector3);
 		// 算出した回転値をこのゲームオブジェクトのrotationに代入
-		player.transform.LookAt(child.transform);
-		Debug.Log("quaternion" + quaternion);
+		// player.transform.LookAt(child.transform);
+        player.transform.rotation = spawn[spawnNumber].transform.rotation;
+
+        Debug.Log("quaternion" + quaternion);
 		Debug.Log(child.gameObject.name);
 	}
 	public void SaveSpot(int s_num)//特定のオブジェクトにいったら、自動的にセーブ

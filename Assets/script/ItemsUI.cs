@@ -39,6 +39,13 @@ public class ItemsUI : MonoBehaviour
         mapObj.SetActive(false);
         countM = 1;
         keyCodeExplanation.MoveKeyCodeExplanation("tab", "マップを開く");
+        GameObject[] mapArray = GameObject.FindGameObjectsWithTag("MazeMap");
+        // mapを2度入手することを防ぐため
+        for (int item = 0; item < mapArray.Length; item++)
+        {
+            mapArray[item].gameObject.tag = "Untagged";
+            Debug.Log("MazeMapのタグが廃止された");
+        }
     }
     private void Update()
     {
