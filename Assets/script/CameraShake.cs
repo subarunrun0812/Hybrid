@@ -10,7 +10,7 @@ public class CameraShake : MonoBehaviour
     {
         _camera = this.GetComponent<Camera>();
         Shake(2f, 0.1f);
-        Debug.Log("CameraShakeが呼ばれた");
+        Debug.Log("CameraShakeがよばれた");
     }
     public void Shake(float duration, float magnitude)
     {
