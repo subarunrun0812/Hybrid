@@ -21,6 +21,7 @@ TagManager:
   - Memo
   - KeyDoor
   - KeyDoor_Key
+  - MorgueBox_Door
   layers:
   - Default
   - TransparentFX
