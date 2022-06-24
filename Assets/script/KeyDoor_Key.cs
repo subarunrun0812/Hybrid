@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class KeyDoor_Key : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private KeyDoor keyDoor;
+    public void GetKey()//鍵を入手した時の処理
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        keyDoor.KeySE();//効果音を鳴らす
+        this.gameObject.SetActive(false);
     }
 }

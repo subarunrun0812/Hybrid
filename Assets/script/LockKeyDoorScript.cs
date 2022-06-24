@@ -22,7 +22,6 @@ public class LockKeyDoorScript : MonoBehaviour
 
     public void IsNearColorLockKeyDoor()
     {
-        Debug.Log(colorLockKey.doorflag);
         if (colorLockKey.doorflag == false)
         {
             if (OpenFlag == true)//ドアを開けるとき
@@ -55,6 +54,5 @@ public class LockKeyDoorScript : MonoBehaviour
         .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 2), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 0.095f));
-
     }
 }

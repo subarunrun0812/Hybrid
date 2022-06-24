@@ -19,6 +19,8 @@ TagManager:
   - BackRoomsExitDoor
   - NormalDoorRight
   - Memo
+  - KeyDoor
+  - KeyDoor_Key
   layers:
   - Default
   - TransparentFX

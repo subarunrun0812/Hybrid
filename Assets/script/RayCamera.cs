@@ -54,7 +54,8 @@ public class RayCamera : MonoBehaviour
             || hittag == "ColorKeyDoor" || hittag == "NormalDoor" || hittag == "NotOpenDoor"
             || hitname == "parkToMuseumKey" || hitname == "parkToMuseumDoor" || hittag == "Bed"
             || hittag == "Locker" || hittag == "BackRoomsDoor" || hittag == "MazeMap"
-            || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight" || hittag == "Memo")
+            || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight" || hittag == "Memo"
+            || hittag == "KeyDoor" || hittag == "KeyDoor_Key")
             {
                 ActiveAimE();
             }
@@ -126,6 +127,16 @@ public class RayCamera : MonoBehaviour
                 else if (hitname == "parkToMuseumKey")
                 {
                     museumkey_s.parkTOMuseumKey();
+                }
+                else if (hittag == "KeyDoor")
+                {
+                    KeyDoor_Door keyDoor_Door = raycastHit.collider.GetComponent<KeyDoor_Door>();
+                    keyDoor_Door.IsNearDoor();
+                }
+                else if (hittag == "KeyDoor_Key")
+                {
+                    KeyDoor_Key KeyDoor_Key = raycastHit.collider.GetComponent<KeyDoor_Key>();
+                    KeyDoor_Key.GetKey();
                 }
                 else if (hitname == "parkToMuseumDoor")
                 {
