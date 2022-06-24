@@ -17,6 +17,7 @@ TagManager:
   - Enemy
   - LeadLamp
   - BackRoomsExitDoor
+  - NormalDoorRight
   layers:
   - Default
   - TransparentFX

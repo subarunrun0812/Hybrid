@@ -54,7 +54,7 @@ public class RayCamera : MonoBehaviour
             || hittag == "ColorKeyDoor" || hittag == "NormalDoor" || hittag == "NotOpenDoor"
             || hitname == "parkToMuseumKey" || hitname == "parkToMuseumDoor" || hittag == "Bed"
             || hittag == "Locker" || hittag == "BackRoomsDoor" || hittag == "MazeMap"
-            || hittag == "BackRoomsExitDoor")
+            || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight")
             {
                 ActiveAimE();
             }
@@ -107,6 +107,11 @@ public class RayCamera : MonoBehaviour
                 {
                     NormalDoor normalDoor_s = raycastHit.collider.GetComponent<NormalDoor>();
                     normalDoor_s.IsNearNormalDoor();
+                }
+                else if (hittag == "NormalDoorRight")
+                {
+                    NormalDoorRight normalDoorRight = raycastHit.collider.GetComponent<NormalDoorRight>();
+                    normalDoorRight.IsNearNormalDoor();
                 }
                 else if (hittag == "NotOpenDoor")
                 {
