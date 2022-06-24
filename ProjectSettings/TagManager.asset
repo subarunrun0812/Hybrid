@@ -18,6 +18,7 @@ TagManager:
   - LeadLamp
   - BackRoomsExitDoor
   - NormalDoorRight
+  - Memo
   layers:
   - Default
   - TransparentFX
