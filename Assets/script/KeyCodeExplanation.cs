@@ -16,8 +16,10 @@ public class KeyCodeExplanation : MonoBehaviour
         audioSource = this.GetComponent<AudioSource>();
         this.transform.DOLocalMoveX(-200f, 0f);
     }
-    public void MoveKeyCodeExplanation(string keycode, string explanation)
+    public void MoveKeyCodeExplanation(int _fontsize, string keycode, string explanation)
     {
+        //1文字の場合は40,3文字の場合は20
+        t_keycode.fontSize = _fontsize;
         t_keycode.text = $"{keycode}";
         t_explanation.text = $"{explanation}";
         StartCoroutine("MoveExplanationCorutine");
