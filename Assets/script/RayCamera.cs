@@ -59,6 +59,12 @@ public class RayCamera : MonoBehaviour
             {
                 ActiveAimE();
             }
+            //rayが当たった瞬間に驚かす
+            else if (hittag == "DeadBody")
+            {
+                ShakeDaedBody shakeDaedBody = raycastHit.collider.GetComponent<ShakeDaedBody>();
+                shakeDaedBody.DeadBodyShake();
+            }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
