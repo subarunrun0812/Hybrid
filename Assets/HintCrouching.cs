@@ -11,7 +11,7 @@ public class HintCrouching : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             _time += Time.deltaTime;
-            if (_time > 5f)
+            if (_time > 4f)
             {
                 keyCodeExplanation.MoveKeyCodeExplanation(40, "C", "しゃがみ");
                 this.gameObject.SetActive(false);
