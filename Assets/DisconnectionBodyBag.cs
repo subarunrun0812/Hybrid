@@ -8,11 +8,11 @@ public class DisconnectionBodyBag : MonoBehaviour
     [SerializeField] private CapsuleCollider col;
     [SerializeField] private GameObject supportPlane;//死体を上手く転がすためのもの
     private Rigidbody rigidbody;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource a_scream;
+    [SerializeField] private AudioSource a_event;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = true;
     }
@@ -20,12 +20,14 @@ public class DisconnectionBodyBag : MonoBehaviour
     public void StartWhenTheDoorOpens()
     {
         rigidbody.isKinematic = false;
-        audioSource.Play();
         StartCoroutine("DiscconectionCorutine");
     }
     IEnumerator DiscconectionCorutine()
     {
-        yield return new WaitForSeconds(2.2f);
+        a_scream.Play();
+        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.4f);
+        a_event.Play();
         //接続を解除
         HingeJoint component = this.gameObject.GetComponent<HingeJoint>();
         Destroy(component);
