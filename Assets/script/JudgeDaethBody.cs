@@ -10,6 +10,7 @@ public class JudgeDaethBody : MonoBehaviour
         if (col.gameObject.tag == "NormalDoor")
         {
             disconnectionBodyBag.StartWhenTheDoorOpens();
+            this.gameObject.SetActive(false);
         }
     }
 }
