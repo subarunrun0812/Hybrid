@@ -25,6 +25,7 @@ TagManager:
   - DeadBody
   - DuctDoor
   - ShelfDoor
+  - Driver
   layers:
   - Default
   - TransparentFX

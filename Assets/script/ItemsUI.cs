@@ -5,9 +5,6 @@ using UnityEngine.UI;
 public class ItemsUI : MonoBehaviour
 {
     [SerializeField] private GameObject key1;
-    [SerializeField] private GameObject bac_key1;
-    [SerializeField] private GameObject bac_key2;
-    [SerializeField] private GameObject bac_key3;
     [SerializeField] private GameObject mapObj;
     [SerializeField] private GameObject mapUI;
     [SerializeField] private KeyCodeExplanation keyCodeExplanation;
