@@ -23,6 +23,7 @@ TagManager:
   - KeyDoor_Key
   - MorgueBox_Door
   - DeadBody
+  - DuctDoor
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class Crouch : MonoBehaviour
     public bool IsCrouched { get; private set; }
     public event System.Action CrouchStart, CrouchEnd;
     private bool getUnderTheBed = false;
-
+    private bool forceCrouch = false;//しゃがみareaに入った場合はtrue
 
     void Reset()
     {
@@ -34,10 +34,14 @@ public class Crouch : MonoBehaviour
         headToLower = movement.GetComponentInChildren<Camera>().transform;
         colliderToLower = movement.GetComponentInChildren<CapsuleCollider>();
     }
-
+    public void forceCrouchVFlag(bool flag)
+    {
+        forceCrouch = flag;
+    }
     void LateUpdate()
     {
-        if (Input.GetKey(key) || Input.GetKey(KeyCode.C))
+        //keycode + しゃがみエリアの場合も強制的にしゃがみを継続させる
+        if (Input.GetKey(key) || Input.GetKey(KeyCode.C) || forceCrouch == true)
         {
             // Enforce a low head.
             if (headToLower)
