@@ -29,7 +29,8 @@ public class NotOpenDoorScript : MonoBehaviour
         .Append(this.transform.DOLocalRotate(new Vector3(0, -2, 0), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(0, -2, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(0, -2, 0), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.095f));
-
     }
 }
