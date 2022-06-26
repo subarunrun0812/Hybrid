@@ -56,7 +56,7 @@ public class RayCamera : MonoBehaviour
             || hittag == "Locker" || hittag == "BackRoomsDoor" || hittag == "MazeMap"
             || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight" || hittag == "Memo"
             || hittag == "KeyDoor" || hittag == "KeyDoor_Key" || hittag == "MorgueBox_Door"
-            || hittag == "DuctDoor")
+            || hittag == "DuctDoor" || hittag == "ShelfDoor")
             {
                 ActiveAimE();
             }
@@ -182,6 +182,11 @@ public class RayCamera : MonoBehaviour
                 {
                     DuctDoor ductDoor = raycastHit.collider.GetComponent<DuctDoor>();
                     ductDoor.IsNearDoctDoor();
+                }
+                else if (hittag == "ShelfDoor")
+                {
+                    ShelfDoor shelfDoor = raycastHit.collider.GetComponent<ShelfDoor>();
+                    shelfDoor.IsNearNormalDoor();
                 }
             }
         }

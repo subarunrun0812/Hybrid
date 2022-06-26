@@ -24,6 +24,7 @@ TagManager:
   - MorgueBox_Door
   - DeadBody
   - DuctDoor
+  - ShelfDoor
   layers:
   - Default
   - TransparentFX
