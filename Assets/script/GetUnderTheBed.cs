@@ -40,7 +40,7 @@ public class GetUnderTheBed : MonoBehaviour
 
         //bedに潜り込むため、playerの身長を低くした
         crouch.headToLower.localPosition = new Vector3
-        (crouch.headToLower.localPosition.x, crouch.crouchYHeadPosition = 0.3f, crouch.headToLower.localPosition.z);
+        (crouch.headToLower.localPosition.x, crouch.crouchYHeadPosition = 0.2f, crouch.headToLower.localPosition.z);
 
         player.transform.position = myTransform.position;
         //playerが移動出来ないようにする。

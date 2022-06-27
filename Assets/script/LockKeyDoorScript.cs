@@ -13,11 +13,13 @@ public class LockKeyDoorScript : MonoBehaviour
     [SerializeField] private AudioClip closeSE;
     [SerializeField] private AudioClip notOpenSE;
     private bool OpenFlag;
+    private float x;
     void Start()
     {
         //doorが閉まっているときはtrue
         OpenFlag = true;
         audioSource = this.gameObject.GetComponent<AudioSource>();
+        x = transform.localEulerAngles.x;
     }
 
     public void IsNearColorLockKeyDoor()
@@ -26,14 +28,14 @@ public class LockKeyDoorScript : MonoBehaviour
         {
             if (OpenFlag == true)//ドアを開けるとき
             {
-                this.transform.DOLocalRotate(new Vector3(-90, 0, -120), 1.6f);
+                this.transform.DOLocalRotate(new Vector3(x, 0, -120), 1.6f);
                 OpenFlag = false;
                 audioSource.PlayOneShot(openSE);
 
             }
             else//ドアを閉めるとき
             {
-                this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 1.0f);
+                this.transform.DOLocalRotate(new Vector3(x, 0, 0), 1.0f);
                 OpenFlag = true;
                 audioSource.PlayOneShot(closeSE);
             }
