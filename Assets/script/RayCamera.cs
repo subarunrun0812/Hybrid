@@ -56,7 +56,7 @@ public class RayCamera : MonoBehaviour
             || hittag == "Locker" || hittag == "BackRoomsDoor" || hittag == "MazeMap"
             || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight" || hittag == "Memo"
             || hittag == "KeyDoor" || hittag == "KeyDoor_Key" || hittag == "MorgueBox_Door"
-            || hittag == "DuctDoor" || hittag == "ShelfDoor" || hittag == "Driver")
+            || hittag == "DuctDoor" || hittag == "ShelfDoor" || hittag == "Driver" || hittag == "BookShelf")
             {
                 ActiveAimE();
             }
@@ -192,6 +192,11 @@ public class RayCamera : MonoBehaviour
                 {
                     DriverItem driverItem = raycastHit.collider.GetComponent<DriverItem>();
                     driverItem.GetDriver();
+                }
+                else if (hittag == "BookShelf")
+                {
+                    BookShelf bookShelf = raycastHit.collider.GetComponent<BookShelf>();
+                    bookShelf.BookShelfMove();
                 }
             }
         }

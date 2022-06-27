@@ -16,6 +16,8 @@ public class KeyDoor_Door : MonoBehaviour
     [SerializeField] private KeyDoor keyDoor;
     private float x;
     private float y;
+    [Header("120度 or -120度")]
+    [SerializeField] private int y_rotation;
     private float z;
     void Start()
     {
@@ -35,7 +37,7 @@ public class KeyDoor_Door : MonoBehaviour
         Debug.Log("OpenDoorが呼ばれた");
         if (OpenFlag == true)//ドアを開けるとき
         {
-            this.transform.DOLocalRotate(new Vector3(x, -120, z), 1.6f);
+            this.transform.DOLocalRotate(new Vector3(x, y_rotation, z), 1.6f);
             OpenFlag = false;
             audioSource.PlayOneShot(openSE);
 
@@ -52,11 +54,11 @@ public class KeyDoor_Door : MonoBehaviour
         Debug.Log("NotOpenAnimが呼ばれた");
         audioSource.PlayOneShot(notOpenSE);
         DOTween.Sequence()
-        .Append(this.transform.DOLocalRotate(new Vector3(x, -2, z), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, z), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(x, -2, z), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, z), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(x, -2, z), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, z), 0.095f));
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y - 2, z), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y, z), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y - 2, z), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y, z), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y - 2, z), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, y, z), 0.095f));
     }
 }
