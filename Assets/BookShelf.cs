@@ -8,7 +8,8 @@ public class BookShelf : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] private AudioClip moveSE;
-    private float time = 1.0f;
+    [SerializeField] private GameObject bookshelf;
+    private float time = 2.0f;
     private bool OpenFlag;
     void Start()
     {
@@ -22,10 +23,15 @@ public class BookShelf : MonoBehaviour
         //ドライバーが必要
         if (OpenFlag == true)//ドアを開けるとき
         {
-            this.transform.DOLocalMoveZ(1.2f, time);
-            audioSource.PlayOneShot(moveSE);
-            OpenFlag = false;
-            this.tag = "Untagged";
+            DOTween.Sequence()
+            .Append(this.transform.DOLocalRotate(new Vector3(0, 0, -30f), 0.4f))
+            .AppendCallback(() =>
+            {
+                audioSource.PlayOneShot(moveSE);
+                OpenFlag = false;
+                this.tag = "Untagged";
+            })
+            .Append(bookshelf.transform.DOLocalMoveZ(1.2f, time));
         }
     }
 }
