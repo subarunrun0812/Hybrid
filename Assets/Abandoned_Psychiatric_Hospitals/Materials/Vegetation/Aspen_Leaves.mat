@@ -9,13 +9,17 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Aspen_Leaves
   m_Shader: {fileID: 4800000, guid: b9e2206000f063e4482138f005c8e6e1, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _MIXSMOOTHNESFROMBASE_ON
-  m_LightmapFlags: 7
+  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT
+    _DOUBLESIDED_ON _MIXSMOOTHNESFROMBASE_ON
+  m_LightmapFlags: 3
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 2475
+  stringTagMap:
+    MotionVector: User
+    RenderType: TransparentCutout
+  disabledShaderPasses:
+  - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -116,24 +120,35 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AddPrecomputedVelocity: 1
+    - _AlphaCutoff: 0.892
+    - _AlphaCutoffEnable: 1
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
     - _AmbientOcclusion: 2.35
     - _Ambient_Occlusion: 0.74
     - _Amplitude: 0.0874
+    - _BlendMode: 0
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
     - _Cull: 0
-    - _Cutoff: 0.8
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _Cutoff: 0.892
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
+    - _DoubleSidedEnable: 1
+    - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
     - _EmissionEnabled: 0
     - _Emmisive_Power: 0.241
+    - _EnableFogOnTransparent: 1
     - _FlipbookMode: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -144,9 +159,14 @@ Material:
     - _MixSmoothnesFromBase: 1
     - _Mode: 1
     - _NormalScale: 0.75
+    - _Normal_Power: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Power_Normal: 0.8
+    - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 0
     - _Scale_Normal: 0
     - _ShadowStrength: 1
     - _Shininess: 0.118
@@ -160,6 +180,18 @@ Material:
     - _SpecularHighlights: 1
     - _SquashAmount: 1
     - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _SupportDecals: 1
+    - _SurfaceType: 0
     - _Tilling_Color: 1.49
     - _TransAmbient: 0.865
     - _TransDirect: 0.404
@@ -168,8 +200,13 @@ Material:
     - _TransShadow: 1
     - _Translucency: 0
     - _TranslucencyViewDependency: 0.7
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _TransparentZWrite: 1
     - _UVSec: 0
     - _UltraDetailScale: 1041
+    - _UseShadowThreshold: 0
     - _Wind: 1.6
     - _WindNoiseTiling: 0.5
     - _WindPower: 0.149
@@ -177,6 +214,9 @@ Material:
     - _WindSpeed: 0.281
     - _Wind_Size: 0.257
     - _Wind_Speed: 2.82
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 3
+    - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
@@ -184,7 +224,8 @@ Material:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0.9150943, g: 0.9134425, b: 0.7208526, a: 0}
     - _Color_Tilling: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SubSurfColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
