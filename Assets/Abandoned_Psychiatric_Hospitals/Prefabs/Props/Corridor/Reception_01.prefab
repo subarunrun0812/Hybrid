@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
-  txt: {fileID: 8057050384760974268, guid: c129f1f930e536e4980cc7ddc2937399, type: 3}
+  txt: {fileID: 0}
 --- !u!65 &3603692957098911141
 BoxCollider:
   m_ObjectHideFlags: 0
