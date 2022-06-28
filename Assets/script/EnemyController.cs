@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//componentを追加
-[RequireComponent(typeof(NavMeshAgent))]
+
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
