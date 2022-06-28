@@ -12,7 +12,7 @@ public class KeyDoor_Key : MonoBehaviour
     {
         Debug.Log("GetKeyが呼ばれた");
         keyDoor.KeySE();//効果音を鳴らす
-        keyCodeExplanation.MoveKeyCodeExplanation(20,"tab", "鍵を入手した");
+        keyCodeExplanation.MoveKeyCodeExplanation(false, 20, "", "鍵を入手した");
         this.gameObject.SetActive(false);
     }
 }

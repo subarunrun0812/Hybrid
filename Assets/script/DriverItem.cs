@@ -8,7 +8,7 @@ public class DriverItem : MonoBehaviour
 
     public void GetDriver()//鍵を入手した時の処理
     {
-        keyCodeExplanation.MoveKeyCodeExplanation(20, "tab", "ねじ回しを入手した");
+        keyCodeExplanation.MoveKeyCodeExplanation(false, 20, "", "ねじ回しを入手した");
         this.gameObject.SetActive(false);
     }
 }
