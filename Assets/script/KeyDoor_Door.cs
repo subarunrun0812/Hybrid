@@ -12,13 +12,18 @@ public class KeyDoor_Door : MonoBehaviour
     [SerializeField] private AudioClip openSE;
     [SerializeField] private AudioClip closeSE;
     [SerializeField] private AudioClip notOpenSE;
+    [SerializeField] private AudioClip unlockKeySE;
     private bool OpenFlag;
+    private bool firstFlag = false;//初めてドアをあけたか
     [SerializeField] private KeyDoor keyDoor;
     private float x;
     private float y;
     [Header("120度 or -120度")]
     [SerializeField] private int y_rotation;
     private float z;
+    [Header("鍵を持っていないときに表示するテキスト(例)**が必要")]
+    [SerializeField] private string msg;
+    [SerializeField] private RequiredItemMessage requiredItemMessage;
     void Start()
     {
         //doorが閉まっているときはtrue
@@ -37,20 +42,30 @@ public class KeyDoor_Door : MonoBehaviour
         Debug.Log("OpenDoorが呼ばれた");
         if (OpenFlag == true)//ドアを開けるとき
         {
-            this.transform.DOLocalRotate(new Vector3(x, y_rotation, z), 1.6f);
-            OpenFlag = false;
-            audioSource.PlayOneShot(openSE);
-
+            StartCoroutine("OpenDoorCorutine");
         }
         else//ドアを閉めるとき
         {
             this.transform.DOLocalRotate(new Vector3(x, 0, z), 1.0f);
             OpenFlag = true;
             audioSource.PlayOneShot(closeSE);
+
         }
+    }
+    private IEnumerator OpenDoorCorutine()
+    {
+        if (firstFlag == false)//初めてドアを開けるとき
+        {
+            audioSource.PlayOneShot(unlockKeySE);
+            yield return new WaitForSeconds(1f);
+        }
+        this.transform.DOLocalRotate(new Vector3(x, y_rotation, z), 1.6f);
+        OpenFlag = false;
+        audioSource.PlayOneShot(openSE);
     }
     public void NotOpenAnim()//鍵が閉まっているとき
     {
+        requiredItemMessage.RequiredMessage(msg);
         Debug.Log("NotOpenAnimが呼ばれた");
         audioSource.PlayOneShot(notOpenSE);
         DOTween.Sequence()

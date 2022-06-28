@@ -10,6 +10,7 @@ public class KeyDoor : MonoBehaviour
     [SerializeField] private GameObject[] keydoor_k;
     private bool OpenFlag;
     [SerializeField] private AudioSource audioSource;
+
     public void KeySE()//keyを入手した時の音
     {
         audioSource.Play();

@@ -18,11 +18,11 @@ public class NotOpenDoorScript : MonoBehaviour
     public void IsNearNotOpenDoor()
     {
         NotOpenAnim();
+    }
+    public void NotOpenAnim()
+    {
         // animator.SetTrigger("NotOpen");
         audioSource.PlayOneShot(notOpenSE);
-    }
-    private void NotOpenAnim()
-    {
         DOTween.Sequence()
         .Append(this.transform.DOLocalRotate(new Vector3(0, -2, 0), 0.095f))
         .Append(this.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.095f))
