@@ -27,6 +27,7 @@ TagManager:
   - ShelfDoor
   - Driver
   - BookShelf
+  - Drawer
   layers:
   - Default
   - TransparentFX

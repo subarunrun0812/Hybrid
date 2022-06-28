@@ -10,6 +10,8 @@ public class NormalDoor : MonoBehaviour
     [SerializeField] private AudioClip openSE;
     [SerializeField] private AudioClip closeSE;
     private bool OpenFlag;
+    [Header("基本は-120度")]
+    [SerializeField] private int y_rotation;
     void Start()
     {
         //doorが閉まっているときはtrue
@@ -22,7 +24,7 @@ public class NormalDoor : MonoBehaviour
 
         if (OpenFlag == true)//ドアを開けるとき
         {
-            this.transform.DOLocalRotate(new Vector3(0, -120, 0), 1.6f);
+            this.transform.DOLocalRotate(new Vector3(0, y_rotation, 0), 1.6f);
             OpenFlag = false;
             audioSource.PlayOneShot(openSE);
 
