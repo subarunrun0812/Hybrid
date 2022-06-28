@@ -58,6 +58,7 @@ public class KeyDoor_Door : MonoBehaviour
         {
             audioSource.PlayOneShot(unlockKeySE);
             yield return new WaitForSeconds(1f);
+            firstFlag = true;
         }
         this.transform.DOLocalRotate(new Vector3(x, y_rotation, z), 1.6f);
         OpenFlag = false;
