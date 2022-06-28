@@ -28,7 +28,7 @@ public class LockKeyDoorScript : MonoBehaviour
         {
             if (OpenFlag == true)//ドアを開けるとき
             {
-                this.transform.DOLocalRotate(new Vector3(x, 0, -120), 1.6f);
+                this.transform.DOLocalRotate(new Vector3(x, -120, 0), 1.6f);
                 OpenFlag = false;
                 audioSource.PlayOneShot(openSE);
 
@@ -50,11 +50,11 @@ public class LockKeyDoorScript : MonoBehaviour
     private void NotOpenAnim()
     {
         DOTween.Sequence()
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 2), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 2), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 2), 0.095f))
-        .Append(this.transform.DOLocalRotate(new Vector3(-90, 0, 0), 0.095f));
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 2, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 2, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 2, 0), 0.095f))
+        .Append(this.transform.DOLocalRotate(new Vector3(x, 0, 0), 0.095f));
     }
 }

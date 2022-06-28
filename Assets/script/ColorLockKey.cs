@@ -126,10 +126,9 @@ public class ColorLockKey : MonoBehaviour
             InputButton();
         }
     }
-    public void Button_6blue()
+    public void Button_6blue()//正解
     {
         m_Array[5].SetColor("_EmissionColor", _6blue);
-        correct = false;
         if (pushArray[5] == false)
         {
             pushArray[5] = true;
@@ -156,9 +155,10 @@ public class ColorLockKey : MonoBehaviour
             InputButton();
         }
     }
-    public void Button_9pink()//正解
+    public void Button_9pink()
     {
         m_Array[8].SetColor("_EmissionColor", _9pink);
+        correct = false;
         if (pushArray[8] == false)
         {
             pushArray[8] = true;
