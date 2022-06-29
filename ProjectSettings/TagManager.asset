@@ -28,6 +28,7 @@ TagManager:
   - Driver
   - BookShelf
   - Drawer
+  - Handle
   layers:
   - Default
   - TransparentFX
