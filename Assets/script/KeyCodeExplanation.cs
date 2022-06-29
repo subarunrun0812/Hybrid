@@ -9,7 +9,6 @@ public class KeyCodeExplanation : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI t_keycode;
     [SerializeField] private TextMeshProUGUI t_explanation;
-    public GameObject shape;
     private AudioSource audioSource;
     private void Start()
     {
@@ -18,9 +17,8 @@ public class KeyCodeExplanation : MonoBehaviour
     }
 
     //四角を表示するか,テキストフォントのサイズ、キーコード、説明
-    public void MoveKeyCodeExplanation(bool active_f, int _fontsize, string keycode, string explanation)
+    public void MoveKeyCodeExplanation(int _fontsize, string keycode, string explanation)
     {
-        shape.SetActive(active_f);
         //1文字の場合は40,3文字の場合は20
         t_keycode.fontSize = _fontsize;
         t_keycode.text = $"{keycode}";

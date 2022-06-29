@@ -13,7 +13,7 @@ public class HintCrouching : MonoBehaviour
             _time += Time.deltaTime;
             if (_time > 6f)
             {
-                keyCodeExplanation.MoveKeyCodeExplanation(true, 40, "C", "しゃがみ");
+                keyCodeExplanation.MoveKeyCodeExplanation(40, "C", "しゃがみ");
                 this.gameObject.SetActive(false);
             }
         }
