@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemsUI : MonoBehaviour
 {
-    [SerializeField] private GameObject key1;
     [SerializeField] private GameObject mapObj;
     [SerializeField] private GameObject mapUI;
     [SerializeField] private KeyCodeExplanation keyCodeExplanation;
@@ -12,7 +11,6 @@ public class ItemsUI : MonoBehaviour
     private int countM = 0;//0 = 開けない,1 = 開ける,2 = 閉じる
     private void Start()
     {
-        key1.SetActive(false);
         mapUI.SetActive(false);
     }
     public void BackRoomsKeys(int key)
@@ -25,11 +23,9 @@ public class ItemsUI : MonoBehaviour
     }
     public void ActiveKey1UIFunction()
     {
-        key1.SetActive(true);
     }
     public void NoActiveKey1UIFunction()
     {
-        key1.SetActive(false);
     }
     public void MazeMapFunction()//mapを入手したときの処理
     {

@@ -32,7 +32,6 @@ public class parkToMuseumKey : MonoBehaviour
         Debug.Log("鍵が消えた");
         //音の追加
         audioSource.PlayOneShot(getItemSE);
-        itemsUI.ActiveKey1UIFunction();
     }
     public void door_parkToMuseumDoor()
     {
@@ -52,7 +51,6 @@ public class parkToMuseumKey : MonoBehaviour
                 OpenFlag = true;
                 audioSource.PlayOneShot(closeSE);
             }
-            itemsUI.NoActiveKey1UIFunction();
         }
         //鍵が閉まっているとき
         else
