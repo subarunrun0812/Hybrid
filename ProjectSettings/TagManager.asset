@@ -29,6 +29,7 @@ TagManager:
   - BookShelf
   - Drawer
   - Handle
+  - ElevatorDoor
   layers:
   - Default
   - TransparentFX
