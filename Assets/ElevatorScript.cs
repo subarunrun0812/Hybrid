@@ -9,6 +9,7 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
     private float moveTime = 8f;//Audioの再生が止まるとき
+    [SerializeField] private Collider col;
     private void Start()
     {
         // DownMoveElevator();
@@ -16,7 +17,12 @@ public class ElevatorScript : MonoBehaviour
 
     public void ElevatorOpenDoor()
     {
+        col.enabled = false;
         animator.SetTrigger("Open");
+    }
+    public void ElevatorCloseDoor()
+    {
+        col.enabled = true;
     }
     public void DownMoveElevator()
     {
