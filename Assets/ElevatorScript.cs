@@ -8,7 +8,7 @@ public class ElevatorScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
-    private float moveTime = 7f;
+    private float moveTime = 8f;//Audioの再生が止まるとき
     private void Start()
     {
         DownMoveElevator();
@@ -22,9 +22,9 @@ public class ElevatorScript : MonoBehaviour
     {
         this.gameObject.transform.DOLocalMoveY(-5f, moveTime);
         audioSource.Play();
-        if (Time.deltaTime <= moveTime)
-        {
-            audioSource.Stop();
-        }
+    }
+    private void Update()
+    {
+        Debug.Log(Time.deltaTime);
     }
 }
