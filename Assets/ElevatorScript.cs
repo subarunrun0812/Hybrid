@@ -11,7 +11,7 @@ public class ElevatorScript : MonoBehaviour
     private float moveTime = 8f;//Audioの再生が止まるとき
     private void Start()
     {
-        DownMoveElevator();
+        // DownMoveElevator();
     }
 
     public void ElevatorOpenDoor()
