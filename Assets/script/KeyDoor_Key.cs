@@ -19,4 +19,5 @@ public class KeyDoor_Key : MonoBehaviour
         imageItemExplanation.ImageItem(sprite, itemName);
         this.gameObject.SetActive(false);
     }
+
 }
