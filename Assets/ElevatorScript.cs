@@ -7,17 +7,20 @@ using DG.Tweening;
 public class ElevatorScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource cabinAudio;
+    [Header("corpus = 外側,cabin = 内側")]
     [SerializeField] private AudioClip corpus_OpenDoorSE;
     [SerializeField] private AudioClip cabin_OpenDoorSE;
     [SerializeField] private AudioClip corpus_CloseDoorSE;
     [SerializeField] private AudioClip cabin_CloseDoorSE;
+    [SerializeField] private AudioClip handleSE;
     private float moveTime = 8f;//Audioの再生が止まるとき
     [SerializeField] private Collider col;
     public void DownMoveElevator()
     {
         this.gameObject.transform.DOLocalMoveY(-5f, moveTime);
-        audioSource.Play();
+        _audioSource.Play();
     }
     private void Start()
     {
@@ -27,20 +30,24 @@ public class ElevatorScript : MonoBehaviour
     public void ElevatorOpenDoor()
     {
         //外側の扉を初めに呼び出す
-        Elevator_Corpus_OpenDoor();
+        Elevator_Handle();
         col.enabled = false;
         animator.SetTrigger("Open");
     }
     //animationEventから呼び出す
     //外側のドア
+    public void Elevator_Handle()
+    {
+        _audioSource.PlayOneShot(handleSE);
+    }
     public void Elevator_Corpus_OpenDoor()
     {
-        audioSource.PlayOneShot(corpus_OpenDoorSE);
+        _audioSource.PlayOneShot(corpus_OpenDoorSE);
     }
     //内側のドア
     public void Elevator_Cabin_OpenDoor()
     {
-        audioSource.PlayOneShot(cabin_OpenDoorSE);
+        cabinAudio.PlayOneShot(cabin_OpenDoorSE);
     }
 
     //ドアを閉じるとき
@@ -51,12 +58,12 @@ public class ElevatorScript : MonoBehaviour
     //外側の扉
     public void Elevator_Corpus_CloseDoor()
     {
-        audioSource.PlayOneShot(corpus_CloseDoorSE);
+        _audioSource.PlayOneShot(corpus_CloseDoorSE);
     }
     //内側のドア
     public void Elevator_Cabin_CloseDoor()
     {
-        audioSource.PlayOneShot(cabin_CloseDoorSE);
+        cabinAudio.PlayOneShot(cabin_CloseDoorSE);
     }
     private void Update()
     {

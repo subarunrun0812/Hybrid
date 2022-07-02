@@ -57,7 +57,7 @@ public class RayCamera : MonoBehaviour
             || hittag == "BackRoomsExitDoor" || hittag == "NormalDoorRight" || hittag == "Memo"
             || hittag == "KeyDoor" || hittag == "KeyDoor_Key" || hittag == "MorgueBox_Door"
             || hittag == "DuctDoor" || hittag == "ShelfDoor" || hittag == "Driver" || hittag == "BookShelf"
-            || hittag == "Drawer" || hittag == "Handle" || hittag == "ElevatorDoor")
+            || hittag == "Drawer" || hittag == "Handle" || hittag == "ElevatorDoor" || hittag == "ElevatorHandle")
             {
                 ActiveAimE();
             }
@@ -213,6 +213,11 @@ public class RayCamera : MonoBehaviour
                 {
                     ElevatorScript elevatorScript = raycastHit.collider.GetComponent<ElevatorScript>();
                     elevatorScript.ElevatorOpenDoor();
+                }
+                else if (hittag == "ElevatorHandle")
+                {
+                    ElevatorHandle elevatorHandle = raycastHit.collider.GetComponent<ElevatorHandle>();
+                    elevatorHandle.MoveRotationHandle();
                 }
             }
         }
