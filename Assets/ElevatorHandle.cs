@@ -8,6 +8,7 @@ public class ElevatorHandle : MonoBehaviour
 {
     [SerializeField] private Vector3 _rotation;
     private AudioSource audioSource;
+    [SerializeField] ElevatorScript elevatorScript;
     [SerializeField] private AudioClip moveHandleSE;
     private float movetime = 0.8f;
 
@@ -15,7 +16,7 @@ public class ElevatorHandle : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-    public void MoveRotationHandle()//ハンドルを回す
+    public void MoveRotationHandle()//ハンドルを回したら、elevatorが降りる
     {
         this.transform.DOLocalRotate((_rotation), movetime);
         audioSource.PlayOneShot(moveHandleSE);

@@ -33,6 +33,7 @@ public class ElevatorScript : MonoBehaviour
         Elevator_Handle();
         col.enabled = false;
         animator.SetTrigger("Open");
+        animator.ResetTrigger("Close");
     }
     //animationEventから呼び出す
     //外側のドア
@@ -54,6 +55,8 @@ public class ElevatorScript : MonoBehaviour
     public void Elevator_CloseDoor()
     {
         col.enabled = true;
+        animator.ResetTrigger("Open");
+        animator.SetTrigger("Close");
     }
     //外側の扉
     public void Elevator_Corpus_CloseDoor()
