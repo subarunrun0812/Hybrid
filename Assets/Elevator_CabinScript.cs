@@ -21,7 +21,7 @@ public class Elevator_CabinScript : MonoBehaviour
     // private float waitTime = 0f;
     IEnumerator DownMoveElevatorCorutine()
     {
-        this.transform.DOLocalMoveY(-7.2f, moveTime);
+        this.transform.DOLocalMoveY(-7.15f, moveTime);
         yield return new WaitForSeconds(moveTime);
         elevatorScript.ElevatorOpenDoor();
     }
