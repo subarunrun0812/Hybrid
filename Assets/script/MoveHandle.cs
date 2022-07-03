@@ -13,6 +13,7 @@ public class MoveHandle : MonoBehaviour
     [SerializeField] private Material elevator_cabin;
     [SerializeField] private GameObject ele_light;
     public bool electricity = false;//ハンドルを回して、電力を復旧させたらtrueにする
+    [SerializeField] private AudioSource audioSE;
 
     private void Start()
     {
@@ -28,7 +29,13 @@ public class MoveHandle : MonoBehaviour
         ele_light.SetActive(true);
         this.transform.DOLocalRotate((_rotation), movetime);
         audioSource.PlayOneShot(lowerSE);
+        StartCoroutine("EventSECoturine");
         electricity = true;
         this.tag = "Untagged";
+    }
+    private IEnumerator EventSECoturine()
+    {
+        yield return new WaitForSeconds(movetime);
+        audioSE.Play();
     }
 }

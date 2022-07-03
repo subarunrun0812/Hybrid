@@ -11,7 +11,7 @@ public class GameManagerSE : MonoBehaviour
     [SerializeField] private AudioSource audioSource2d;
     // [SerializeField] private AudioClip backHomeClip;//playerを見失ったとき
     [SerializeField] private AudioSource chasingBGM;
-
+    [SerializeField] private AudioClip EventSEOnTheFrontExitDoorSE;
     void Start()
     {
         ZeroHeartbeat();
@@ -23,6 +23,10 @@ public class GameManagerSE : MonoBehaviour
     public void BackHomeSE()
     {
         audioSource2d.volume = 0.7f;
+    }
+    public void EventSEOnTheFrontExitDoor()
+    {
+        audioSource2d.PlayOneShot(EventSEOnTheFrontExitDoorSE);
     }
     private bool exitdoor = false;
     public void ChasingSE()
