@@ -25,7 +25,7 @@ public class ElevatorHandle : MonoBehaviour
     }
     IEnumerator WaiTimeCoturine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         elevator_CabinScript.DownMoveElevator();
 
     }

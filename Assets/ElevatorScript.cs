@@ -14,15 +14,24 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private AudioClip handleSE;
     [SerializeField] private Collider col;
     [SerializeField] private Elevator_CabinScript elevator_CabinScript;
-
+    [SerializeField] private MoveHandle moveHandle;
+    [SerializeField] private RequiredItemMessage requiredItemMessage;
     public void ElevatorOpenDoor()
     {
-        //外側の扉を初めに呼び出す
-        Elevator_Handle();
-        col.enabled = false;
-        animator.SetTrigger("Open");
-        animator.ResetTrigger("Close");
-        StartCoroutine("CabinOpeDoorCorutine");
+        if (moveHandle.electricity == false)//エレベーターの電力が復旧していないとき
+        {
+            requiredItemMessage.RequiredMessage("エレベーターの電力が復旧していない");
+        }
+        else
+        {
+            //外側の扉を初めに呼び出す
+            Elevator_Handle();
+            col.enabled = false;
+            animator.SetTrigger("Open");
+            animator.ResetTrigger("Close");
+            StartCoroutine("CabinOpeDoorCorutine");
+
+        }
     }
     IEnumerator CabinOpeDoorCorutine()
     {
@@ -42,7 +51,6 @@ public class ElevatorScript : MonoBehaviour
     //ドアを閉じるとき
     public void Elevator_CloseDoor()
     {
-        col.enabled = true;
         animator.ResetTrigger("Open");
         animator.SetTrigger("Close");
     }
