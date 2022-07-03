@@ -22,9 +22,9 @@ public class Elevator_CabinScript : MonoBehaviour
     IEnumerator DownMoveElevatorCorutine()
     {
         this.transform.DOLocalMoveY(-13.25f, moveTime);
-        yield return new WaitForSeconds(moveTime - 4.5f);
+        yield return new WaitForSeconds(moveTime - 3.5f);
         StartCoroutine("VolumeDown");
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(3.5f);
         Debug.Log("Elevatorがついた");
     }
     IEnumerator VolumeDown()

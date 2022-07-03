@@ -17,7 +17,9 @@ public class MazeExitDoor : MonoBehaviour
     [SerializeField] private GameObject _camera;
     [SerializeField] private SilentTimer silentTimer;
     [SerializeField] private GameManagerSE gameManagerSE;
-
+    public bool fromElevator = true;
+    [SerializeField] private AudioClip openSE;
+    [SerializeField] private AudioClip closeSE;
 
     void Start()
     {
@@ -34,13 +36,32 @@ public class MazeExitDoor : MonoBehaviour
     {
         if (OpenFlag == false)//ドアにロックがかかっているとき
         {
-            NotOpenAnim();
-            audioSource.PlayOneShot(notOpenSE);
+            if (fromElevator == true)
+            {
+                OpenDoor();
+                fromElevator = false;
+            }
+            else
+            {
+                NotOpenAnim();
+                audioSource.PlayOneShot(notOpenSE);
+            }
         }
         else//ドアが開けれる時,//timelintのカットシーンに入る
         {
             StartTimeLine();
         }
+    }
+    public void CloseDoor()
+    {
+        this.transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f);
+        audioSource.PlayOneShot(closeSE);
+    }
+    private void OpenDoor()
+    {
+        this.transform.DOLocalRotate(new Vector3(0, -120, 0), 1.6f);
+        audioSource.PlayOneShot(openSE);
+
     }
     private void StartTimeLine()//timelineを再生する
     {
