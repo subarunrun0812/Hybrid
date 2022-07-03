@@ -8,7 +8,7 @@ public class ElevatorHandle : MonoBehaviour
 {
     [SerializeField] private Vector3 _rotation;
     private AudioSource audioSource;
-    [SerializeField] ElevatorScript elevatorScript;
+    [SerializeField] Elevator_CabinScript elevator_CabinScript;
     [SerializeField] private AudioClip moveHandleSE;
     private float movetime = 0.8f;
 
@@ -18,8 +18,15 @@ public class ElevatorHandle : MonoBehaviour
     }
     public void MoveRotationHandle()//ハンドルを回したら、elevatorが降りる
     {
+        StartCoroutine("WaiTimeCoturine");
         this.transform.DOLocalRotate((_rotation), movetime);
         audioSource.PlayOneShot(moveHandleSE);
         this.tag = "Untagged";
+    }
+    IEnumerator WaiTimeCoturine()
+    {
+        yield return new WaitForSeconds(2f);
+        elevator_CabinScript.DownMoveElevator();
+
     }
 }
