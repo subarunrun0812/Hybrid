@@ -20,6 +20,7 @@ public class MazeExitDoor : MonoBehaviour
     public bool fromElevator = true;
     [SerializeField] private AudioClip openSE;
     [SerializeField] private AudioClip closeSE;
+    [SerializeField] private FadeInEndTimeLineUI fadeInEndTimeLineUI;
 
     void Start()
     {
@@ -82,8 +83,13 @@ public class MazeExitDoor : MonoBehaviour
     public void EndTimeline()
     {
         Debug.Log("EndTimeLineが呼ばれた");
-        firstPersonLook.enabled = true;
+        firstPersonLook.enabled = false;
         gameManagerSE.ZeroHeartbeat();
+        // fadeInEndTimeLineUI.FadeInUI();
+    }
+    private void FeddOutUI()
+    {
+
     }
     private void OnPlayableDirectorPaused(PlayableDirector aDirector)
     {
