@@ -31,7 +31,7 @@ public class ItemsUI : MonoBehaviour
     {
         mapObj.SetActive(false);
         countM = 1;
-        keyCodeExplanation.MoveKeyCodeExplanation(20, "", "マップを開く");
+        keyCodeExplanation.MoveKeyCodeExplanation(20, "tab", "マップを開く");
         GameObject[] mapArray = GameObject.FindGameObjectsWithTag("MazeMap");
         // mapを2度入手することを防ぐため
         for (int item = 0; item < mapArray.Length; item++)
