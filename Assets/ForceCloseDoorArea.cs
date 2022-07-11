@@ -18,5 +18,6 @@ public class ForceCloseDoorArea : MonoBehaviour
 			keyDoor_Door.CloseDoor();
 			door.tag = "Untagged";
 		}
-	}
+        this.gameObject.SetActive(false);
+    }
 }
