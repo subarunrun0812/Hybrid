@@ -15,6 +15,9 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent _enemy;
     public bool backHomeSE_f;//敵を見失った時に一回だけ音を鳴らす
     private bool chasingSE_f = true;
+    [SerializeField] private FirstPersonLook firstPersonLook;
+    [SerializeField] private FirstPersonMovement firstPersonMovement;
+
     void Start()
     {
         _enemy = GetComponent<NavMeshAgent>();
@@ -73,6 +76,12 @@ public class EnemyController : MonoBehaviour
     public void EnemyAgentStopMove()//enemyの動きを一時的に止め、攻撃する
     {
         _enemy.isStopped = true;
+        //カメラを固定する
+        firstPersonLook.enabled = false;
+        //playerが移動出来ないようにする。
+        firstPersonMovement.playerMoveFlag = false;
+        //カメラをenemyの方に向ける
+        player.transform.LookAt(this.transform);
     }
     //animationのeventsから呼ぶ。
     public void AttackFlagTrue()//。攻撃モーションの初めにtrueにする
