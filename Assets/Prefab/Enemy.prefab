@@ -154,8 +154,8 @@ GameObject:
   - component: {fileID: 593751933311030044}
   - component: {fileID: 593751933311030040}
   - component: {fileID: 593751933311030041}
-  - component: {fileID: 593751933311030042}
   - component: {fileID: 593751933311030043}
+  - component: {fileID: 465276075}
   m_Layer: 0
   m_Name: EnemyAttackDetector
   m_TagString: Untagged
@@ -226,19 +226,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &593751933311030042
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593751933311030045}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.2
-  m_Center: {x: -0, y: 1.2686957, z: 0}
 --- !u!114 &593751933311030043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +245,20 @@ MonoBehaviour:
   gameManagerSE: {fileID: 0}
   firstPersonMovement: {fileID: 0}
   hitSE: 0
+--- !u!136 &465276075
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593751933311030045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.55
+  m_Height: 2.4283195
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.3693786, z: 0}
 --- !u!1 &594162598405003988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1407,7 @@ Transform:
   m_GameObject: {fileID: 594162605035538366}
   m_LocalRotation: {x: 0, y: 0.9719897, z: 0, w: 0.23502347}
   m_LocalPosition: {x: -0.426, y: 0, z: 3.389}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.85, z: 0.9}
   m_Children:
   - {fileID: 593751932649544425}
   - {fileID: 593751933311030044}
@@ -1433,8 +1434,8 @@ MonoBehaviour:
   shoutSeClip: {fileID: 8300000, guid: 7d7339b628c434d0ab5fdfeaf048466f, type: 3}
   emptyAttack3Clip: {fileID: 8300000, guid: b5e9e396f310d4ea2935467ebcc2bca9, type: 3}
   hitAttack3Clip: {fileID: 8300000, guid: 8031a17f65b584c74a4f1e2e171a9c1e, type: 3}
-  walkLeftClip: {fileID: 8300000, guid: 4db9415ea2211429aae18f94fc41950a, type: 3}
-  walkRightClip: {fileID: 8300000, guid: e66b56920992d467781995ed1d21250c, type: 3}
+  walkLeftClip: {fileID: 8300000, guid: 1ebd49491b417ea4eb8b1a8525bc5dcf, type: 3}
+  walkRightClip: {fileID: 8300000, guid: 01b2c3da344f098449f95ad794ddae9b, type: 3}
   disappearanceClip: {fileID: 8300000, guid: be3f6cf75514b45d7989c9b10fd5b459, type: 3}
 --- !u!114 &594162605035538364
 MonoBehaviour:
@@ -1454,6 +1455,9 @@ MonoBehaviour:
   enemySE: {fileID: 593751932497961531}
   gameManaSE: {fileID: 0}
   backHomeSE_f: 0
+  firstPersonLook: {fileID: 0}
+  firstPersonMovement: {fileID: 0}
+  attcol: {fileID: 465276075}
 --- !u!195 &594162605035538365
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1487,9 +1491,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.6022136
   m_Direction: 1
-  m_Center: {x: -0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.3011068, z: 0}
 --- !u!95 &679177392334872798
 Animator:
   serializedVersion: 3
@@ -1540,14 +1544,14 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0036849976
-      value: 0.90766144
-      inSlope: -0.002821161
-      outSlope: -0.002821161
+      time: 0
+      value: 0.99905396
+      inSlope: -0.23615076
+      outSlope: -0.23615076
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.075026274
+      outWeight: 0.15701173
     - serializedVersion: 3
       time: 1
       value: 0
