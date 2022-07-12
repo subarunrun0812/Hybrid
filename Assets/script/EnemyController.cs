@@ -17,11 +17,19 @@ public class EnemyController : MonoBehaviour
     private bool chasingSE_f = true;
     [SerializeField] private FirstPersonLook firstPersonLook;
     [SerializeField] private FirstPersonMovement firstPersonMovement;
+    [SerializeField] private Collider attcol;
 
     void Start()
     {
         _enemy = GetComponent<NavMeshAgent>();
         fukuroPics = GameObject.FindGameObjectsWithTag("FukuroPic");
+        attcol.enabled = false;
+        StartCoroutine("AttackCorutine");
+    }
+    private IEnumerator AttackCorutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        attcol.enabled = true;
     }
     public void EnemyAgentMove()//enemyが壁から登場しanimationをした後に追いかける
     {
