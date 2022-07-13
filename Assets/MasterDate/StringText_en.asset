@@ -16,8 +16,7 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 483bbb3736710974fa560ccc4029a608, type: 2}
   m_Metadata:
-    m_Items:
-    - id: 0
+    m_Items: []
   m_TableData:
   - m_Id: 7518547968
     m_Localized: 'There has been a constant stream of bizarre phenomena at this hospital.
@@ -36,8 +35,7 @@ MonoBehaviour:
   - m_Id: 2129219809280
     m_Localized: 
     m_Metadata:
-      m_Items:
-      - id: 0
+      m_Items: []
   - m_Id: 6798612623360
     m_Localized: "\rframe rate"
     m_Metadata:
@@ -56,7 +54,3 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 1
-    00000000:
-      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_Entries: 00f063bfef010000
