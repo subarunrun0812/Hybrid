@@ -28,6 +28,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - id: 0
+  - m_Id: 6798612623360
+    m_Localized: "\u30D5\u30EC\u30FC\u30E0\u30EC\u30FC\u30C8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82449063473152
+    m_Localized: "\u30DE\u30A6\u30B9\u611F\u5EA6"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82568240427008
+    m_Localized: "\u8A00\u8A9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82929520996352
+    m_Localized: "\u623B\u308B"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:

@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - id: 0
+  - m_Id: 6798612623360
+    m_Localized: "\rframe rate"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82449063473152
+    m_Localized: mouse sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82568240427008
+    m_Localized: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82929520996352
+    m_Localized: return
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:
