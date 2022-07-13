@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup deathUI;//死んだ時の血の額縁と画面を暗くする
     [SerializeField] private CanvasGroup youdiedUI;
+    [SerializeField] private GameObject retryButton;
     [SerializeField] private EnemyController enemyController;
     [SerializeField] private GameObject player;
     [SerializeField] private FirstPersonLook firstPersonLook;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         deathUI.GetComponent<CanvasGroup>().alpha = 0;
         youdiedUI.GetComponent<CanvasGroup>().alpha = 0;
+        retryButton.SetActive(false);
         // Use at most one pixel light for every object
         QualitySettings.pixelLightCount = 10;
         //settingMenuで変更した内容をロードする
@@ -30,15 +32,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("ParkingUnderground");
-            Time.timeScale = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     SceneManager.LoadScene("ParkingUnderground");
+        //     Time.timeScale = 1;
+        // }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     PlayerPrefs.DeleteAll();
+        // }
     }
     public void ChangeFPSValue(int fps)
     {
@@ -59,6 +61,9 @@ public class GameManager : MonoBehaviour
         youdiedUI.enabled = true;
         youdiedUI.DOFade(1f, deathWaitTime + deathWaitTime / 2);
         yield return new WaitForSeconds(deathWaitTime);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        retryButton.SetActive(true);
         Time.timeScale = 0;
     }
 
