@@ -32,10 +32,6 @@ MonoBehaviour:
       return alive.'
     m_Metadata:
       m_Items: []
-  - m_Id: 2129219809280
-    m_Localized: 
-    m_Metadata:
-      m_Items: []
   - m_Id: 6798612623360
     m_Localized: "\rframe rate"
     m_Metadata:

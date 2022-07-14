@@ -19,12 +19,6 @@ MonoBehaviour:
     m_Key: MemoUI_0
     m_Metadata:
       m_Items: []
-  - m_Id: 2129219809280
-    m_Key: 't_Message
-
-'
-    m_Metadata:
-      m_Items: []
   - m_Id: 6798612623360
     m_Key: "\rframe rate"
     m_Metadata:
