@@ -23,6 +23,9 @@ public class EnemyController : MonoBehaviour
     {
         _enemy = GetComponent<NavMeshAgent>();
         fukuroPics = GameObject.FindGameObjectsWithTag("FukuroPic");
+    }
+    private void OnEnable()
+    {
         attcol.enabled = false;
         StartCoroutine("AttackCorutine");
     }
