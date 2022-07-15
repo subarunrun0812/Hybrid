@@ -12,6 +12,7 @@ public class FadeInEndTimeLineUI : MonoBehaviour
     private float t_time = 0.12f;//１文字を表示する時間
     [SerializeField] private GameObject titlebutton;//titlesceneに戻るボタン
     [SerializeField] private CanvasGroup b_canvasGroup;
+    [SerializeField] private GameObject fadeInUIEnd;
     private string contents =
      "無事に、奴を仕留めれた。\nしかし、ここは一体なんの施設だっただろうか。\nなぜ、ここで人間とトナカイのハイブリッドを作っていたのだろうか。";
     private void Start()
@@ -20,10 +21,12 @@ public class FadeInEndTimeLineUI : MonoBehaviour
         b_canvasGroup.alpha = 0f;
         _text.text = "";
         titlebutton.SetActive(false);
+        fadeInUIEnd.SetActive(false);
     }
     //TimeLineから呼び出す
     public void FadeInUI()
     {
+        fadeInUIEnd.SetActive(true);
         canvasGroup.DOFade(1f, 3f).OnComplete(() =>
         {
             EndStoryText();

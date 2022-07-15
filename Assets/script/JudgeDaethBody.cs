@@ -5,12 +5,14 @@ using UnityEngine;
 public class JudgeDaethBody : MonoBehaviour
 {
     [SerializeField] private DisconnectionBodyBag disconnectionBodyBag;
-    void OnTriggerEnter(Collider col)
+    [SerializeField] private PendulumBodyColPlayer pendulumBodyColPlayer;
+    void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "NormalDoor")
+        if (col.gameObject.tag == "NormalDoor" && pendulumBodyColPlayer.player_f == true)
         {
             disconnectionBodyBag.StartWhenTheDoorOpens();
             this.gameObject.SetActive(false);
+
         }
     }
 }

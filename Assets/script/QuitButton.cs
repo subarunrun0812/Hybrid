@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
 public class QuitButton : MonoBehaviour,
     IPointerDownHandler,
     IPointerEnterHandler,
@@ -23,7 +25,7 @@ public class QuitButton : MonoBehaviour,
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         onClickCallback?.Invoke();
-        pauseMenu.QuitGame();
+        SceneManager.LoadScene("TitleScene");
     }
     //ポインターがオブジェクトに乗ったとき
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
