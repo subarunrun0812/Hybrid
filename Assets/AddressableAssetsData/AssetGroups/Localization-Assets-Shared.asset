@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: Assets/MasterDate/StringText Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 8ff3852b8e7733e4c933c3475056bc38
+    m_Address: Assets/MasterDate/ItemsTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 348426ee9890c1f42aea091751fafea5
+    m_Address: Assets/MasterDate/MemosTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 668cccce46ed4e84285325d57e44067d, type: 2}
   m_SchemaSet:

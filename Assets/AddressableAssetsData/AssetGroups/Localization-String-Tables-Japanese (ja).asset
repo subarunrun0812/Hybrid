@@ -23,6 +23,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ja
     - Preload
+  - m_GUID: 6f62098a11f872640ae9f29e0c96b3e0
+    m_Address: ItemsTable_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    - Preload
+  - m_GUID: 2b69271d6d83b044d9b83888fca1c5a9
+    m_Address: MemosTable_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 668cccce46ed4e84285325d57e44067d, type: 2}
   m_SchemaSet:
