@@ -70,5 +70,21 @@ MonoBehaviour:
       got to be a room somewhere to set off the bomb.
     m_Metadata:
       m_Items: []
+  - m_Id: 22810770796544
+    m_Localized: quit[Q]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24694667603968
+    m_Localized: 'The bombing took him out.
+
+      What in the world was he? There
+      is no one left alive who knows his true identity.
+
+
+
+      After that, I found
+      a way out of the building and got out safely.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

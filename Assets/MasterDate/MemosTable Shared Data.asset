@@ -43,6 +43,14 @@ MonoBehaviour:
     m_Key: MemoUI_6
     m_Metadata:
       m_Items: []
+  - m_Id: 22810770796544
+    m_Key: quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24694667603968
+    m_Key: EndText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

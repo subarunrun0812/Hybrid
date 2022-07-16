@@ -13,10 +13,12 @@ public class FadeInEndTimeLineUI : MonoBehaviour
     [SerializeField] private GameObject titlebutton;//titlesceneに戻るボタン
     [SerializeField] private CanvasGroup b_canvasGroup;
     [SerializeField] private GameObject fadeInUIEnd;
-    private string contents =
-     "無事に、奴を仕留めれた。\nしかし、ここは一体なんの施設だっただろうか。\nなぜ、ここで人間とトナカイのハイブリッドを作っていたのだろうか。";
+    private TextMeshProUGUI contentstext;
+    private string contents;
     private void Start()
     {
+        contentstext = GetComponent<TextMeshProUGUI>();
+        contents = contentstext.text.ToString();
         canvasGroup.alpha = 0f;
         b_canvasGroup.alpha = 0f;
         _text.text = "";
