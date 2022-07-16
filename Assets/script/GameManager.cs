@@ -32,15 +32,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("ParkingUnderground");
-            Time.timeScale = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     SceneManager.LoadScene("ParkingUnderground");
+        //     Time.timeScale = 1;
+        // }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     PlayerPrefs.DeleteAll();
+        // }
     }
     public void ChangeFPSValue(int fps)
     {
