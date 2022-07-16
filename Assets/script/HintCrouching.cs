@@ -24,6 +24,6 @@ public class HintCrouching : MonoBehaviour
 	}
 	private void Update()
 	{
-		Debug.Log("Time: " + _time);
+		// Debug.Log("Time: " + _time);
 	}
 }

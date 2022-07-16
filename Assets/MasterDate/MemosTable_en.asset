@@ -86,5 +86,9 @@ MonoBehaviour:
       a way out of the building and got out safely.'
     m_Metadata:
       m_Items: []
+  - m_Id: 42978888642560
+    m_Localized: Return to title scene
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -22,7 +22,10 @@ public class KeyDoor_Door : MonoBehaviour
     [SerializeField] private int y_rotation;
     private float z;
     [Header("鍵を持っていないときに表示するテキスト(例)**が必要")]
-    [SerializeField] private string msg;
+    [SerializeField] private string msg_ja;
+    [SerializeField] private string msg_en;
+    [SerializeField] private ChangeLanguage changeLanguage;
+
     [SerializeField] private RequiredItemMessage requiredItemMessage;
     void Start()
     {
@@ -71,7 +74,11 @@ public class KeyDoor_Door : MonoBehaviour
     }
     public void NotOpenAnim()//鍵が閉まっているとき
     {
-        requiredItemMessage.RequiredMessage(msg);
+        if (changeLanguage.lannum == 0)
+            requiredItemMessage.RequiredMessage(msg_ja);
+        else if (changeLanguage.lannum == 1)
+            requiredItemMessage.RequiredMessage(msg_en);
+
         Debug.Log("NotOpenAnimが呼ばれた");
         audioSource.PlayOneShot(notOpenSE);
         DOTween.Sequence()

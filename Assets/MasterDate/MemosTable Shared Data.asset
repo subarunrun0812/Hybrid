@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: EndText
     m_Metadata:
       m_Items: []
+  - m_Id: 42978888642560
+    m_Key: EndQuit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

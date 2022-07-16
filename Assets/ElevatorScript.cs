@@ -16,11 +16,15 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private Elevator_CabinScript elevator_CabinScript;
     [SerializeField] private MoveHandle moveHandle;
     [SerializeField] private RequiredItemMessage requiredItemMessage;
+    [SerializeField] private ChangeLanguage changeLanguage;
     public void ElevatorOpenDoor()
     {
         if (moveHandle.electricity == false)//エレベーターの電力が復旧していないとき
         {
-            requiredItemMessage.RequiredMessage("エレベーターの電力が復旧していない");
+            if (changeLanguage.lannum == 0)
+                requiredItemMessage.RequiredMessage("エレベーターの電力が復旧していない");
+            else if (changeLanguage.lannum == 1)
+                requiredItemMessage.RequiredMessage("Elevator power has not been restored");
         }
         else
         {

@@ -13,12 +13,13 @@ public class FadeInEndTimeLineUI : MonoBehaviour
     [SerializeField] private GameObject titlebutton;//titlesceneに戻るボタン
     [SerializeField] private CanvasGroup b_canvasGroup;
     [SerializeField] private GameObject fadeInUIEnd;
-    private TextMeshProUGUI contentstext;
-    private string contents;
+    [SerializeField] private ChangeLanguage changeLanguage;
+    private string contents_ja =
+     "あの爆破により、やつを仕留めれた。\n一体やつはなんだったんだろうか。やつの素性を知るものはもう生きていない。\n\n\nこの後、私は外に繋がる出口を見つけ、無事に脱出することが出来た。";
+    private string contents_en =
+     "The bombing took him out.\nWhat in the world was he? There is no one left alive who knows his true identity.\n\n\nAfter that, I found a way out of the building and got out safely.";
     private void Start()
     {
-        contentstext = GetComponent<TextMeshProUGUI>();
-        contents = contentstext.text.ToString();
         canvasGroup.alpha = 0f;
         b_canvasGroup.alpha = 0f;
         _text.text = "";
@@ -36,13 +37,31 @@ public class FadeInEndTimeLineUI : MonoBehaviour
     }
     private void EndStoryText()
     {
-        int contentsLength = contents.Length;
-        _text.DOText(contents, t_time * contentsLength).SetEase(Ease.Linear);
+        if (changeLanguage.lannum == 0)
+        {
+            int contentsLength = contents_ja.Length;
+            _text.DOText(contents_ja, t_time * contentsLength).SetEase(Ease.Linear);
+        }
+        else if (changeLanguage.lannum == 1)
+        {
+            int contentsLength = contents_en.Length;
+            _text.DOText(contents_en, t_time * contentsLength).SetEase(Ease.Linear);
+
+        }
         StartCoroutine("TransitionTitleScene");
     }
+    private int contentsLength;
     private IEnumerator TransitionTitleScene()
     {
-        int contentsLength = contents.Length;
+
+        if (changeLanguage.lannum == 0)
+        {
+            contentsLength = contents_ja.Length;
+        }
+        else if (changeLanguage.lannum == 1)
+        {
+            contentsLength = contents_en.Length;
+        }
         yield return new WaitForSeconds(t_time * contentsLength + 6f);
         titlebutton.SetActive(true);
         Cursor.visible = true;
