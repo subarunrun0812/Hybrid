@@ -14,6 +14,7 @@ public class ChangeLanguage : MonoBehaviour
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[PlayerPrefs.GetInt("language", 0)];
         Debug.Log("language : " + PlayerPrefs.GetInt("language"));
+        lannum = PlayerPrefs.GetInt("language", 0);
     }
 
     // オプションが変更されたときに実行するメソッド
