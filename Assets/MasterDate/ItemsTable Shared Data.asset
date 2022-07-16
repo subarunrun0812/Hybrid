@@ -14,7 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: ItemsTable
   m_TableCollectionNameGuidString: 8ff3852b8e7733e4c933c3475056bc38
-  m_Entries: []
+  m_Entries:
+  - m_Id: 13768535044096
+    m_Key: Screwdriver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13935535452160
+    m_Key: Crematorium key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13998584229888
+    m_Key: Study room key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14088493330432
+    m_Key: Need screwdriver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14314314657792
+    m_Key: Need key to crematorium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14381591293952
+    m_Key: Need key to study room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14469269024768
+    m_Key: Elevator power has not been restored
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14684252270592
+    m_Key: crouching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14751214333952
+    m_Key: Open Map
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

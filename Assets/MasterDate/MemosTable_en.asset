@@ -17,6 +17,58 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 348426ee9890c1f42aea091751fafea5, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 37331660800
+    m_Localized: 'There has been a constant stream of bizarre phenomena at this hospital.
+
+      I
+      have heard rumors that they are conducting biological experiments behind the
+      scenes.
+
+      I hear they are creating human-reindeer hybrids.
+
+      There
+      is no doubt that something is lurking here. But it is said that those who see
+      what it is will never return alive.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7780218171392
+    m_Localized: An empty room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7795514798080
+    m_Localized: '[Record]
+
+      Subject B, body rejection and failure.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7815781675008
+    m_Localized: 'Beautiful reindeer ornament.
+
+      The key to the study room is
+      not here.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7828096151552
+    m_Localized: There must be a door leading to it somewhere.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7856680333312
+    m_Localized: 'The image on the screen is of him.
+
+      The human-reindeer hybrid
+      experiment was a success.
+
+      He''s eliminated all the researchers and disappeared.
+
+      It''s
+      dangerous underground. Do not go down there.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7871985348608
+    m_Localized: The best way to take him out is to blow up the entire house. There's
+      got to be a room somewhere to set off the bomb.
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -17,6 +17,42 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 8ff3852b8e7733e4c933c3475056bc38, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 13768535044096
+    m_Localized: Screwdriver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13935535452160
+    m_Localized: Crematorium key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13998584229888
+    m_Localized: Study room key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14088493330432
+    m_Localized: Need screwdriver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14314314657792
+    m_Localized: Need key to crematorium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14381591293952
+    m_Localized: Need key to study room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14469269024768
+    m_Localized: Elevator power has not been restored
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14684252270592
+    m_Localized: crouching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14751214333952
+    m_Localized: Open Map
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

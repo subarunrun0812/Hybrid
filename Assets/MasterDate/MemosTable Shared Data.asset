@@ -16,7 +16,31 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 348426ee9890c1f42aea091751fafea5
   m_Entries:
   - m_Id: 37331660800
-    m_Key: New Entry
+    m_Key: MemoUI_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7780218171392
+    m_Key: MemoUI_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7795514798080
+    m_Key: MemoUI_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7815781675008
+    m_Key: MemoUI_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7828096151552
+    m_Key: MemoUI_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7856680333312
+    m_Key: MemoUI_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7871985348608
+    m_Key: MemoUI_6
     m_Metadata:
       m_Items: []
   m_Metadata:

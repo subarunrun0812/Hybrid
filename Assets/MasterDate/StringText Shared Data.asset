@@ -15,10 +15,6 @@ MonoBehaviour:
   m_TableCollectionName: StringText
   m_TableCollectionNameGuidString: 483bbb3736710974fa560ccc4029a608
   m_Entries:
-  - m_Id: 7518547968
-    m_Key: MemoUI_0
-    m_Metadata:
-      m_Items: []
   - m_Id: 6798612623360
     m_Key: "\rframe rate"
     m_Metadata:

@@ -18,20 +18,6 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 7518547968
-    m_Localized: 'There has been a constant stream of bizarre phenomena at this hospital.
-
-      I
-      have heard rumors that they are conducting biological experiments behind the
-      scenes.
-
-      I heard they are creating human-reindeer hybrids.
-
-      Something
-      must be lurking. However, it is said that those who see what it is will never
-      return alive.'
-    m_Metadata:
-      m_Items: []
   - m_Id: 6798612623360
     m_Localized: "\rframe rate"
     m_Metadata:
