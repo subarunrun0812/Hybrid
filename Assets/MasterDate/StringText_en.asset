@@ -34,5 +34,9 @@ MonoBehaviour:
     m_Localized: return
     m_Metadata:
       m_Items: []
+  - m_Id: 1045476227149824
+    m_Localized: Quit[Q]
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

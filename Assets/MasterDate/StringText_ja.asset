@@ -34,5 +34,9 @@ MonoBehaviour:
     m_Localized: "\u623B\u308B"
     m_Metadata:
       m_Items: []
+  - m_Id: 1045476227149824
+    m_Localized: "\u9589\u3058\u308B[Q]"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
