@@ -15,7 +15,7 @@ public class TitleCreditsButton : MonoBehaviour,
     [SerializeField] private GameObject before_img;
     [SerializeField] private GameObject after_img;
     [SerializeField] private TiTleSceneManager titleSceneManager;
-    void Start()
+    void OnEnable()
     {
         before_img.SetActive(true);
         after_img.SetActive(false);

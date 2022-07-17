@@ -18,4 +18,9 @@ public class TiTleSceneManager : MonoBehaviour
         mainObj.SetActive(false);
         creditsObj.SetActive(true);
     }
+    public void QuitCreditsDisplay()
+    {
+        mainObj.SetActive(true);
+        creditsObj.SetActive(false);
+    }
 }
