@@ -9,6 +9,7 @@ public class FirstPersonLook : MonoBehaviour
 
     Vector2 velocity;
     Vector2 frameVelocity;
+    [SerializeField] private Rigidbody rigidbody_;
 
     void Reset()
     {
@@ -16,9 +17,13 @@ public class FirstPersonLook : MonoBehaviour
         character = GetComponentInParent<FirstPersonMovement>().transform;
     }
 
-    void Start()
+    public void StopPlayerRotation()
     {
-        // Lock the mouse cursor to the game screen.
+        rigidbody_.constraints = RigidbodyConstraints.FreezeRotation;
+    }
+    public void StartPlayerRotation()
+    {
+        rigidbody_.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void Update()

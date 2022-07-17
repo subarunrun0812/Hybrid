@@ -13,16 +13,18 @@ public class Memo : MonoBehaviour
     public void MemoUION()
     {
         firstPersonLook.enabled = false;
+        firstPersonLook.StopPlayerRotation();
         MemoUI.SetActive(true);
+    }
+    public void MemoUIOFF()
+    {
+        firstPersonLook.enabled = true;
+        firstPersonLook.StartPlayerRotation();
+        MemoUI.SetActive(false);
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
             MemoUIOFF();
-    }
-    public void MemoUIOFF()
-    {
-        firstPersonLook.enabled = true;
-        MemoUI.SetActive(false);
     }
 }
