@@ -15,7 +15,7 @@ public class FadeInEndTimeLineUI : MonoBehaviour
     [SerializeField] private GameObject fadeInUIEnd;
     [SerializeField] private ChangeLanguage changeLanguage;
     private string contents_ja =
-     "あの爆破により、やつを仕留めれた。\n一体やつはなんだったんだろうか。やつの素性を知るものはもう生きていない。\n\n\nこの後、私は外に繋がる出口を見つけ、無事に脱出することが出来た。";
+     "あの爆破により、やつを仕留められた。\n一体やつはなんだったんだろうか。やつの素性を知るものはもう生きていない。\n\n\nこの後、私は外に繋がる出口を見つけ、無事に脱出することが出来た。";
     private string contents_en =
      "The bombing took him out.\nWhat in the world was he? There is no one left alive who knows his true identity.\n\n\nAfter that, I found a way out of the building and got out safely.";
     private void Start()
