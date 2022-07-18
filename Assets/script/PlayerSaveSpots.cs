@@ -16,14 +16,16 @@ public class PlayerSaveSpots : MonoBehaviour
         spawnNumber = PlayerPrefs.GetInt("SpawnNumber", 0);//PlayerPrefs.GetInt(保存した時に使ったキーデフォルト値,データが保存されなかった時に表示する値)
         player.transform.position = spawn[spawnNumber].transform.position;
 
+
         // //カメラを固定する
         // firstPersonLook.enabled = false;
         // //playerが移動出来ないようにする。
         // firstPersonMovement.playerMoveFlag = false;
         // //カメラをenemyの方に向ける
         // player.transform.LookAt(spawn[spawnNumber].transform.GetChild(0).gameObject.transform);
-
         // StartCoroutine("MoveCameraCorutine");
+
+
         // //スポーン時に向きを設定
         // //対象物と自分自身の座標からベクトルを算出
         // //子オブジェクトの順番で取得。最初が0で二番目が1となる。つまり↓は最初の子オブジェクト
