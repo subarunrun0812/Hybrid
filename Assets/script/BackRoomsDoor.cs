@@ -9,6 +9,7 @@ using UnityEngine.AI;
 // [RequireComponent(typeof(NavMeshObstacle))]
 public class BackRoomsDoor : MonoBehaviour
 {
+    //https://qiita.com/okbzerotech84/items/b3c76796449a2e888cc4
     [SerializeField]
     private GUIStyle gUIStyle;
     private AudioSource audioSource;
