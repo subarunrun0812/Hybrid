@@ -42,24 +42,24 @@ public class PlayerSaveSpots : MonoBehaviour
     }
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Alpha0))
-        // {
-        //     PlayerPrefs.SetInt("SpawnNumber", 0);
-        //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
-        // }
-        // else if (Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     PlayerPrefs.SetInt("SpawnNumber", 1);
-        //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
-        // }
-        // else if (Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     PlayerPrefs.SetInt("SpawnNumber", 2);
-        //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
-        // }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            PlayerPrefs.SetInt("SpawnNumber", 0);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("ParkingUnderground");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlayerPrefs.SetInt("SpawnNumber", 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("ParkingUnderground");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            PlayerPrefs.SetInt("SpawnNumber", 2);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("ParkingUnderground");
+        }
     }
     private IEnumerator MoveCameraCorutine()
     {

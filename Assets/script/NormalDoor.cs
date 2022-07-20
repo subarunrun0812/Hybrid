@@ -31,10 +31,14 @@ public class NormalDoor : MonoBehaviour
         }
         else//ドアを閉めるとき
         {
-            this.transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f);
-            OpenFlag = true;
-            audioSource.PlayOneShot(closeSE);
+            CloseDoor();
         }
+    }
+    public void CloseDoor()
+    {
+        this.transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f);
+        OpenFlag = true;
+        audioSource.PlayOneShot(closeSE);
     }
 
 }

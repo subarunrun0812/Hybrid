@@ -6,6 +6,7 @@ public class BomsRoomDoorOpenFlag : MonoBehaviour
 {
     [SerializeField] private SilentScript silentScript;
     [SerializeField] private GameObject eventSEObj;
+    [SerializeField] private GameObject spotLight;//doorを照らしているライト
     // [SerializeField] private caricatureTrap silentEnemy;
     // [SerializeField] private GameObject silentEnemyObj;
 
@@ -21,6 +22,7 @@ public class BomsRoomDoorOpenFlag : MonoBehaviour
             silentScript.StartSilent();
             Debug.Log("bamsRoomsDoorが開いた");
             eventSEObj.SetActive(false);
+            spotLight.SetActive(false);
             //enemyを登場させる
             // silentEnemyObj.SetActive(true);
             // silentEnemy.EntryEnemy();
