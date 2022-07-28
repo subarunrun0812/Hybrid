@@ -1,10 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using DG.Tweening;
-using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup deathUI;//死んだ時の血の額縁と画面を暗くする
@@ -15,7 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FirstPersonLook firstPersonLook;
 
     private float deathWaitTime = 2;
-    // Start is called before the first frame update
     void Start()
     {
         deathUI.GetComponent<CanvasGroup>().alpha = 0;
@@ -28,10 +23,8 @@ public class GameManager : MonoBehaviour
         firstPersonLook.sensitivity = PlayerPrefs.GetFloat("mouseValue", 2.0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         // if (Input.GetKeyDown(KeyCode.R))
         // {
         //     SceneManager.LoadScene("ParkingUnderground");
@@ -55,7 +48,7 @@ public class GameManager : MonoBehaviour
         deathUI.DOFade(1f, deathWaitTime);
         StartCoroutine("YouDiedUICorutine");
     }
-    private IEnumerator YouDiedUICorutine()//死んだ時のテキストを出すタイミングをずらす
+    private IEnumerator YouDiedUICorutine()//死んだ時のテキストを出す
     {
         yield return new WaitForSeconds(deathWaitTime / 3);
         youdiedUI.enabled = true;
