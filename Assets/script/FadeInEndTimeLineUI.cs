@@ -35,33 +35,26 @@ public class FadeInEndTimeLineUI : MonoBehaviour
             EndStoryText();
         });
     }
+    //スクリプトから多言語対応させたテキストを表示する。Localization Tablesの設定したtextをanimationさせる方法が分からなかったので
+    private int contentsLength;
     private void EndStoryText()
     {
         if (changeLanguage.lannum == 0)
         {
-            int contentsLength = contents_ja.Length;
+            contentsLength = contents_ja.Length;
             _text.DOText(contents_ja, t_time * contentsLength).SetEase(Ease.Linear);
         }
         else if (changeLanguage.lannum == 1)
         {
-            int contentsLength = contents_en.Length;
+            contentsLength = contents_en.Length;
             _text.DOText(contents_en, t_time * contentsLength).SetEase(Ease.Linear);
 
         }
         StartCoroutine("TransitionTitleScene");
     }
-    private int contentsLength;
     private IEnumerator TransitionTitleScene()
     {
 
-        if (changeLanguage.lannum == 0)
-        {
-            contentsLength = contents_ja.Length;
-        }
-        else if (changeLanguage.lannum == 1)
-        {
-            contentsLength = contents_en.Length;
-        }
         yield return new WaitForSeconds(t_time * contentsLength + 6f);
         titlebutton.SetActive(true);
         Cursor.visible = true;

@@ -15,6 +15,7 @@ public class EnemyRaycastHit : MonoBehaviour
         if (Physics.Raycast(ray, out raycasthit, 4f))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * raycasthit.distance, Color.yellow);
+            //ドアが目の前に来たら開ける
             if (raycasthit.transform.gameObject.tag == "BackRoomsDoor")
             {
                 BackRoomsDoor backRoomsDoor = raycasthit.collider.GetComponent<BackRoomsDoor>();

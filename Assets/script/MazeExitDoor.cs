@@ -41,6 +41,7 @@ public class MazeExitDoor : MonoBehaviour
             {
                 OpenDoor();
                 fromElevator = false;
+                this.tag = "Untagged";
             }
             else
             {
@@ -55,6 +56,7 @@ public class MazeExitDoor : MonoBehaviour
     }
     public void CloseDoor()
     {
+        this.tag = "BackRoomsExitDoor";
         this.transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f);
         audioSource.PlayOneShot(closeSE);
     }
@@ -66,19 +68,19 @@ public class MazeExitDoor : MonoBehaviour
     }
     private void StartTimeLine()//timelineを再生する
     {
-        //gameobject.tagを変更して、動的にドアを開けられないようにする
+        //AimEを表示させないため
         this.tag = "Untagged";
         //timelineの終了を計算する
         director.paused += OnPlayableDirectorPaused;
         //timerを非表示にする  
         silentTimer.NoActiveTimer();
-        silentTimer.enabled = false;//timerをリセットする
+        silentTimer.enabled = false;
         _camera.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         //カメラを動かせないようにする
         firstPersonLook.enabled = false;
         timeline.SetActive(true);
         enemy.SetActive(false);
-        gameManagerSE.ExitDoorStopChasingSE();//chasingSEを止める
+        gameManagerSE.ExitDoorStopChasingSE();
     }
     public void EndTimeline()
     {

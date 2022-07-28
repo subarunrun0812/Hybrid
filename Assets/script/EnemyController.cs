@@ -79,12 +79,11 @@ public class EnemyController : MonoBehaviour
             Debug.Log("一番近い絵の目的地は:" + nearestPic);
             if (_enemy.remainingDistance <= 1)//目的地までの距離がわかる
             {
-                enemySE.DisappearanceSE();
                 _enemy.transform.gameObject.SetActive(false);
             }
         }
     }
-    public void EnemyAgentStopMove()//enemyの動きを一時的に止め、攻撃する
+    public void EnemyAgentStopMove()//playerを殺害するスクリプト
     {
         _enemy.isStopped = true;
         //カメラを固定する

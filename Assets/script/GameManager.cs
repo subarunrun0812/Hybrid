@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         deathUI.GetComponent<CanvasGroup>().alpha = 0;
         youdiedUI.GetComponent<CanvasGroup>().alpha = 0;
         retryButton.SetActive(false);
-        // Use at most one pixel light for every object
+        // オブジェクトに影響を与える、ピクセルライトの最大数を設定する。
         QualitySettings.pixelLightCount = 10;
         //settingMenuで変更した内容をロードする
         Application.targetFrameRate = PlayerPrefs.GetInt("fpsValue", 60);

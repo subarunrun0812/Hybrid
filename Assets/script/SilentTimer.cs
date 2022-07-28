@@ -52,9 +52,9 @@ public class SilentTimer : MonoBehaviour
             Debug.Log("制限時間終了");
         }
     }
+    //爆破でplayerが死ぬ処理
     private IEnumerator BigBangCorutine()
     {
-        //爆発のSEを流す
         audioSource.Play();
         gameManager.PlayerDeath();
         yield return new WaitForSeconds(0.5f);

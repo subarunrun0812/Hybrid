@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemsUI : MonoBehaviour
 {
-    [SerializeField] private GameObject mapObj;
+    // [SerializeField] private GameObject mapObj;
     [SerializeField] private GameObject mapUI;
     [SerializeField] private KeyCodeExplanation keyCodeExplanation;
     private int keyCount;
@@ -21,15 +21,9 @@ public class ItemsUI : MonoBehaviour
 
         }
     }
-    public void ActiveKey1UIFunction()
-    {
-    }
-    public void NoActiveKey1UIFunction()
-    {
-    }
     public void MazeMapFunction()//mapを入手したときの処理
     {
-        mapObj.SetActive(false);
+        // mapObj.SetActive(false);
         countM = 1;
         keyCodeExplanation.MoveKeyCodeExplanation(20, "tab", "マップを開く");
         GameObject[] mapArray = GameObject.FindGameObjectsWithTag("MazeMap");

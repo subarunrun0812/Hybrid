@@ -5,14 +5,14 @@ using TMPro;
 
 public class RequiredItemMessage : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI t_required;//必要な道具を表示するテキスト
+    [SerializeField] private TextMeshProUGUI t_required;//必要な道具名や鍵名を表示するテキスト
     private float displayTime = 3f;
     [SerializeField] private AudioSource audioSource;
     private void Start()
     {
         t_required.text = "";
     }
-    public void RequiredMessage(string message)//必要な道具をテキストで表示する
+    public void RequiredMessage(string message)//必要な道具名や鍵名を表示するテキスト
     {
         audioSource.Play();
         t_required.text = message;

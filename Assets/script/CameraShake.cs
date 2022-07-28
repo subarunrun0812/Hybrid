@@ -24,6 +24,7 @@ public class CameraShake : MonoBehaviour
 
         var elapsed = 0f;
 
+        //カメラの揺れ
         while (elapsed < duration)
         {
             var x = pos.x + Random.Range(-1f, 1f) * magnitude;
