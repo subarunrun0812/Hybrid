@@ -15,7 +15,7 @@ public class RetryButton : MonoBehaviour,
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         onClickCallback?.Invoke();
-        SceneManager.LoadScene("ParkingUnderground");
+        SceneManager.LoadScene("MainScene");
         Time.timeScale = 1;
     }
 }

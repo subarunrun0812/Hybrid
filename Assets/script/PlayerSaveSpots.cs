@@ -28,19 +28,19 @@ public class PlayerSaveSpots : MonoBehaviour
         // {
         //     PlayerPrefs.SetInt("SpawnNumber", 0);
         //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
+        //     SceneManager.LoadScene("MainScene");
         // }
         // else if (Input.GetKeyDown(KeyCode.Alpha1))
         // {
         //     PlayerPrefs.SetInt("SpawnNumber", 1);
         //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
+        //     SceneManager.LoadScene("MainScene");
         // }
         // else if (Input.GetKeyDown(KeyCode.Alpha2))
         // {
         //     PlayerPrefs.SetInt("SpawnNumber", 2);
         //     PlayerPrefs.Save();
-        //     SceneManager.LoadScene("ParkingUnderground");
+        //     SceneManager.LoadScene("MainScene");
         // }
     }
 }

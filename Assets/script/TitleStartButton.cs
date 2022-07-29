@@ -24,7 +24,7 @@ public class TitleStartButton : MonoBehaviour,
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         onClickCallback?.Invoke();
-        SceneManager.LoadScene("ParkingUnderground");
+        SceneManager.LoadScene("MainScene");
     }
     //ポインターがオブジェクトに乗ったとき
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)

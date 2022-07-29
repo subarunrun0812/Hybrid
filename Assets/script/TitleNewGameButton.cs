@@ -25,7 +25,7 @@ public class TitleNewGameButton : MonoBehaviour,
     {
         onClickCallback?.Invoke();
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("ParkingUnderground");
+        SceneManager.LoadScene("MainScene");
 
     }
     //ポインターがオブジェクトに乗ったとき

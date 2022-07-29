@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: aed73bd362648204fa4143d32dad59d9
   - enabled: 1
-    path: Assets/Scenes/ParkingUnderground.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 46c46f890d3ccd34ba37c61b374f78a1, type: 2}
