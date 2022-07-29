@@ -20,7 +20,6 @@ public class BookShelf : MonoBehaviour
     public void BookShelfMove()
     {
         //一度開けたら開けっ放しにする
-        //ドライバーが必要
         if (OpenFlag == true)//ドアを開けるとき
         {
             DOTween.Sequence()

@@ -6,7 +6,7 @@ using UnityEngine;
 public class DisconnectionBodyBag : MonoBehaviour
 {
     [SerializeField] private CapsuleCollider col;
-    [SerializeField] private GameObject supportPlane;//死体を上手く転がすためのもの
+    [SerializeField] private GameObject supportPlane;//死体を上手く転がすため
     private Rigidbody rigidbody;
     [SerializeField] private AudioSource a_scream;
     [SerializeField] private AudioSource a_event;
@@ -25,8 +25,7 @@ public class DisconnectionBodyBag : MonoBehaviour
     IEnumerator DiscconectionCorutine()
     {
         a_scream.Play();
-        yield return new WaitForSeconds(0.6f);
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(2.0f);
         a_event.Play();
         //接続を解除
         HingeJoint component = this.gameObject.GetComponent<HingeJoint>();
@@ -34,12 +33,5 @@ public class DisconnectionBodyBag : MonoBehaviour
         col.enabled = true;
         yield return new WaitForSeconds(1.5f);
         supportPlane.SetActive(false);
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartWhenTheDoorOpens();
-        }
     }
 }

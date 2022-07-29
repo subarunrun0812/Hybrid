@@ -7,7 +7,7 @@ using DG.Tweening;
 public class KeyDoor_Door : MonoBehaviour
 {
     [Header("door,key番号")]
-    [SerializeField] private int num;
+    [SerializeField] private int doorNum;
     private AudioSource audioSource;
     [SerializeField] private AudioClip openSE;
     [SerializeField] private AudioClip closeSE;
@@ -36,18 +36,18 @@ public class KeyDoor_Door : MonoBehaviour
         y = transform.localEulerAngles.y;
         z = transform.localEulerAngles.z;
     }
-    public void IsNearDoor()//keydoorを選択したときに一番最初によばれるかんすう 
+    public void IsNearDoor()//RayCamera.csから一番最初に呼ばれる関数
     {
-        keyDoor.KeyFlag(num);
+        keyDoor.KeyFlag(doorNum);
     }
     public void OpenDoor()
     {
         Debug.Log("OpenDoorが呼ばれた");
-        if (OpenFlag == true)//ドアを開けるとき
+        if (OpenFlag == true)
         {
             StartCoroutine("OpenDoorCorutine");
         }
-        else//ドアを閉めるとき
+        else
         {
             CloseDoor();
         }

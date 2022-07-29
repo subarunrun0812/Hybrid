@@ -25,7 +25,7 @@ public class ColorLockKey : MonoBehaviour
 
     private int total;//4つ押したら、リセット or アンロック
     private bool correct;//1つでも間違えた場合、falseにする
-    public bool doorflag = true;//doorの開ける音は一回だけにする
+    public bool lockflag = true;//鍵が開く音は一回だけにする
     void Start()
     {
         StartCoroutine("ResetColorCorutine");
@@ -56,14 +56,13 @@ public class ColorLockKey : MonoBehaviour
     {
         audioSource.PlayOneShot(correctClip);
         yield return new WaitForSeconds(0.6f);
-        if (doorflag)
+        if (lockflag)
         {
             audioSource.PlayOneShot(unlockDoorClip);
-            doorflag = false;
+            lockflag = false;
         }
-        Debug.Log("暗号装置キーを解除した");
     }
-    IEnumerator ResetColorCorutine()//色とボタンを押した真偽をリセットする
+    IEnumerator ResetColorCorutine()
     {
 
         for (int i = 0; i < pushArray.Length; i++)
@@ -76,7 +75,7 @@ public class ColorLockKey : MonoBehaviour
         {
             m_Array[number].SetColor("_EmissionColor", colorOff);
         }
-        //不正解の時のみ、falseにするため、リセットのタイミングでtrueにする
+        //リセットのタイミングでtrueにする
         correct = true;
     }
     public void Button_1green()//正解

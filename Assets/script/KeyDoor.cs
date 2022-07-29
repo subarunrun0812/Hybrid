@@ -17,16 +17,13 @@ public class KeyDoor : MonoBehaviour
     }
     public void KeyFlag(int num)//doorを開けるときkeyを持ってるか判断する
     {
-        Debug.Log("num = " + num);
-        if (keydoor_k[num].activeSelf == false)//鍵が非表示になっていたら持っている判定になる
+        if (keydoor_k[num].activeSelf == false)//鍵持っている
         {
-            Debug.Log("keydoor_k.activeSelf == false");
             KeyDoor_Door keyDoor_Door = keyDoor_d[num].GetComponent<KeyDoor_Door>();
             keyDoor_Door.OpenDoor();
         }
-        else if (keydoor_k[num].activeSelf == true)//鍵を持っていない時
+        else if (keydoor_k[num].activeSelf == true)//鍵を持っていない
         {
-            Debug.Log("keydoor_k.activeSelf == true");
             KeyDoor_Door keyDoor_Door = keyDoor_d[num].GetComponent<KeyDoor_Door>();
             keyDoor_Door.NotOpenAnim();
         }

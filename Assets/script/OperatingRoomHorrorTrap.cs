@@ -16,6 +16,7 @@ public class OperatingRoomHorrorTrap : MonoBehaviour
             StartCoroutine("AnimCorutine");
         }
     }
+    //ドアをガタガタさせる
     IEnumerator AnimCorutine()
     {
         yield return new WaitForSeconds(0.2f);

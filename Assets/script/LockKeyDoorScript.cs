@@ -24,7 +24,7 @@ public class LockKeyDoorScript : MonoBehaviour
 
     public void IsNearColorLockKeyDoor()
     {
-        if (colorLockKey.doorflag == false)
+        if (colorLockKey.lockflag == false)
         {
             if (OpenFlag == true)//ドアを開けるとき
             {

@@ -11,6 +11,8 @@ public class ForceCloseDoorArea : MonoBehaviour
 		keyDoor_Door = door.GetComponent<KeyDoor_Door>();
 	}
 
+//特定の場所にPlayerがついたら、この関数が呼び出される
+//
 	void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "Player")

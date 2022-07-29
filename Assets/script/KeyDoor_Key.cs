@@ -7,9 +7,8 @@ public class KeyDoor_Key : MonoBehaviour
 {
     [SerializeField] private KeyDoor keyDoor;
 
-    //他のアイテムと同様のコード
     [SerializeField] private ImageItemExplanation imageItemExplanation;
-    [SerializeField] private Sprite sprite;//鍵の透過画像を貼る
+    [SerializeField] private Sprite sprite;//鍵の画像を貼る
     [SerializeField] private string itemName_ja;
     [SerializeField] private string itemName_en;
     [SerializeField] private ChangeLanguage changeLanguage;
@@ -18,6 +17,9 @@ public class KeyDoor_Key : MonoBehaviour
     {
         Debug.Log("GetKeyが呼ばれた");
         keyDoor.KeySE();//効果音を鳴らす
+
+        //スクリプトから言語に応じてテキストを変更する。
+        //Localization Tablesの設定したtextをanimationさせる方法が分からなかったため
         if (changeLanguage.lannum == 0)
             imageItemExplanation.ImageItem(sprite, itemName_ja);
         else if (changeLanguage.lannum == 1)

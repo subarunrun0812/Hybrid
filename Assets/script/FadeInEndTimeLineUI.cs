@@ -35,7 +35,8 @@ public class FadeInEndTimeLineUI : MonoBehaviour
             EndStoryText();
         });
     }
-    //スクリプトから多言語対応させたテキストを表示する。Localization Tablesの設定したtextをanimationさせる方法が分からなかったので
+    //スクリプトから言語に応じてテキストを変更する。
+    //Localization Tablesの設定したtextをanimationさせる方法が分からなかったため
     private int contentsLength;
     private void EndStoryText()
     {

@@ -13,9 +13,10 @@ public class DriverItem : MonoBehaviour
     [SerializeField] private ChangeLanguage changeLanguage;
     public void GetDriver()//鍵を入手した時の処理
     {
+        //スクリプトから言語に応じてテキストを変更する。
+        //Localization Tablesの設定したtextをanimationさせる方法が分からなかったため
         if (changeLanguage.lannum == 0)
             imageItemExplanation.ImageItem(sprite, itemName_ja);
-            
         else if (changeLanguage.lannum == 1)
             imageItemExplanation.ImageItem(sprite, itemName_en);
         this.gameObject.SetActive(false);

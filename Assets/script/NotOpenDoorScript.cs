@@ -19,9 +19,10 @@ public class NotOpenDoorScript : MonoBehaviour
     {
         NotOpenAnim();
     }
+
+    //ドアをガタガタさせる
     public void NotOpenAnim()
     {
-        // animator.SetTrigger("NotOpen");
         audioSource.PlayOneShot(notOpenSE);
         DOTween.Sequence()
         .Append(this.transform.DOLocalRotate(new Vector3(0, -2, 0), 0.095f))
