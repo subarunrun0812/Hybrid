@@ -7,7 +7,6 @@
 [Ll]ogs/
 [Ww]ebGL/
 [Rr]ecordings/
-
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
 

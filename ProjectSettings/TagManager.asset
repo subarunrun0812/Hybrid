@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - MazeMap
+  - BackRoomsDoor
+  - NormalDoor
+  - Silent
+  - FukuroPic
+  - Trap
+  - NotOpenDoor
+  - ColorKeyDoor
+  - Locker
+  - Bed
+  - Enemy
+  - LeadLamp
+  - BackRoomsExitDoor
+  - NormalDoorRight
+  - Memo
+  - KeyDoor
+  - KeyDoor_Key
+  - MorgueBox_Door
+  - DeadBody
+  - DuctDoor
+  - ShelfDoor
+  - Driver
+  - BookShelf
+  - Drawer
+  - Handle
+  - ElevatorDoor
+  - ElevatorHandle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - MazeMap
+  - Player
+  - MazeDoor
+  - Item
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
